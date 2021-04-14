@@ -84,6 +84,63 @@ nlu:
     - so saad
     - so sad
 
+- intent: percent
+  examples: |
+    - what is my percentage
+    - tell the percentage
+    - how much percentage i got
+    - can you tell my percentage
+
+- intent : marks
+  examples: |
+    - what are my marks
+    - how muc marks I got
+    - please tell me my marks
+    - can you tell me my marks
+
+- intent: sub_info
+  examples: |
+    - subject
+    - sub
+
+- intent: sem_info
+  examples: |
+    - semester
+    - sem
+     
+- intent: agg_percentage
+  examples: |
+    - all semester 
+    - total semester
+
+- intent: particular_semester
+  examples: |
+    - first 
+    - second 
+    - third
+    - fourth
+    - fifth
+    - sixth
+    - seventh
+    - eighth
+
+- intent: sub_name
+  examples: |
+    - subject 
+
+- intent: dept_hods
+  examples: |
+
+- intent: sub_teachers
+  examples: |
+
+- intent: fee_structure
+  examples: |
+
+- intent: student_info
+  examples: |
+  roll number
+
 - intent: bot_challenge
   examples: |
     - are you a bot?

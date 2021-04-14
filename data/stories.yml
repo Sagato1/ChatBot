@@ -28,3 +28,33 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
+- story: only percentage path 
+  steps:
+  - intent: percent
+  - action: subject_or_semester 
+  - intent: sub_info
+  - action: sub_name
+  - intent: subject
+  - action: result_percentage_api
+  - intent: sem_info
+  - action: particular_or_all
+  - intent: particular_semester
+  - action: result_percentage_api
+  - intent: agg_percentage
+  - action: result_percentage_api
+
+- story: only marks path
+  steps:
+  - intent: marks
+  - action: subject_or_semester
+  - intent: sub_info
+  - intent: sub_name
+  - intent: subject
+  - action: result_marks_api
+  - intent: sem_info
+  - action: particular_or_all
+  - intent: particular_semester
+  - action: result_marks_api
+  - intent: agg_marks
+  - action: result_marks_api
