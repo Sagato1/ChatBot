@@ -84,14 +84,51 @@ nlu:
     - so saad
     - so sad
 
-- intent: percent
+- intent: simple_percent
   examples: |
     - what is my percentage
     - tell the percentage
     - how much percentage i got
     - can you tell my percentage
 
-- intent : marks
+- intent: complex_percent1
+  examples: |
+  - Can you tell me the percentage for roll number [1706810235]("entity":"roll_number", "value":"1706810235")
+  - How much percentage did the roll number [4738296710]("entity":"roll_number", "value":"4738296710") get ?
+  - tell me thepecentage of roll number [5739204789]("entity":"roll_number", "value":"5739204789")
+  - what is the percentage of roll number [4456723891]("entity":"roll_number", "value":"4456723891")
+  - Tell me the percentage [5739982637]("entity":"roll_number", "value":"5739982637") get
+
+- intent: complex_percent2
+  examples: |
+  - Can you tell me the percentage for roll number [1706810235]("entity":"roll_number", "value":"1706810235") for [first]("entity":"semester", "value":"first") semester
+  - How much percent did the roll number [4738296710]("entity":"roll_number", "value":"4738296710") in [second]("entity":"semester", "value":"second") semester get ?
+  - tell me the pecent of roll number [5739204789]("entity":"roll_number", "value":"5739204789") for semester [fifth]("entity":"semester", "value":"fifth")
+  - what is the percentage of roll number [4456723891]("entity":"roll_number", "value":"4456723891") in sem [one]("entity":"semester", "value":"one")
+  - Tell me the percentage [5739982637]("entity":"roll_number", "value":"5739982637") get in [second]("entity":"semester", "value":"second") semester
+  - Can you tell me the percentage for [first]("entity":"semester", "value":"eight") semester for roll number [1676845235]("entity":"roll_number", "value":"1706810235")
+  - How much percentage did one get in [second]("entity":"semester", "value":"seventh") semester with roll number [4735689710]("entity":"roll_number", "value":"4738296710")?
+
+- intent: complex_marks1
+  examples: |
+  - Can you tell me the percentage for roll number [1706810235]("entity":"roll_number", "value":"1706810235")
+  - How much percentage did the roll number [4738296710]("entity":"roll_number", "value":"4738296710") get ?
+  - tell me thepecentage of roll number [5739204789]("entity":"roll_number", "value":"5739204789")
+  - what is the percentage of roll number [4456723891]("entity":"roll_number", "value":"4456723891")
+  - Tell me the percentage [5739982637]("entity":"roll_number", "value":"5739982637") get
+
+- intent: complex_marks2
+  examples: |
+  - Can you tell me the marks for roll number [1706810235]("entity":"roll_number", "value":"1706810235") for [first]("entity":"semester", "value":"first") semester
+  - How much marks did the roll number [4738296710]("entity":"roll_number", "value":"4738296710") in [second]("entity":"semester", "value":"second") semester get ?
+  - tell me the marks of roll number [5739204789]("entity":"roll_number", "value":"5739204789") for semester [fifth]("entity":"semester", "value":"fifth")
+  - what is the mark of roll number [4456723891]("entity":"roll_number", "value":"4456723891") in sem [one]("entity":"semester", "value":"one")
+  - Tell me the number [5739982637]("entity":"roll_number", "value":"5739982637") get in [second]("entity":"semester", "value":"second") semester
+  - Can you tell me the marks for [first]("entity":"semester", "value":"eight") semester for roll number [1676845235]("entity":"roll_number", "value":"1706810235")
+  - How much numbers did one get in [second]("entity":"semester", "value":"seventh") semester with roll number [4735689710]("entity":"roll_number", "value":"4738296710")?
+
+
+- intent : marks  
   examples: |
     - what are my marks
     - how muc marks I got

@@ -8,6 +8,45 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - complex_percent1:
+     use_entities:
+      - roll_number
+      - semester
+  - complex_percent2:
+     use_entities:
+      - roll_number
+      - semester  
+  - complex_marks1:
+     use_entities:
+      - roll_number
+      - semester  
+  - complex_marks2:
+     use_entities:
+      - roll_number
+      - semester    
+
+actions:
+  - validate_result
+  - action_submitresult
+
+forms: 
+ result:
+  roll:
+   - type: from_entity
+     entity: roll_number
+  sem:
+   - type: from_entity
+     entity: semester
+
+slots:
+ roll:
+  type: text
+ sem:
+  type: text  
+
+entities:
+   - roll_number
+   - semester
 
 responses:
   utter_greet:
@@ -29,6 +68,8 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
 
+  utter_details_thanks:
+  - text: "Thanks for providing the given details \nemailid is : {registeremail}"
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
