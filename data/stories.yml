@@ -29,32 +29,112 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
-- story: only percentage path 
+- story: happy play video path
   steps:
-  - intent: percent
-  - action: subject_or_semester 
-  - intent: sub_info
-  - action: sub_name
-  - intent: subject
-  - action: result_percentage_api
-  - intent: sem_info
-  - action: particular_or_all
-  - intent: particular_semester
-  - action: result_percentage_api
-  - intent: agg_percentage
-  - action: result_percentage_api
+    - intent: play_video
+    - action: action_video
 
-- story: only marks path
+- story: result path 1
   steps:
-  - intent: marks
-  - action: subject_or_semester
-  - intent: sub_info
-  - intent: sub_name
-  - intent: subject
-  - action: result_marks_api
-  - intent: sem_info
-  - action: particular_or_all
-  - intent: particular_semester
-  - action: result_marks_api
-  - intent: agg_marks
-  - action: result_marks_api
+  - intent: askresult
+  - action: utter_ok
+  - action: utter_option
+  - intent: semester
+    entities:
+    - optsem: "semester"
+  - slot_was_set:
+      - optsem: "semester"  
+  - action: utter_semester
+  - intent: tellsem
+    entities:
+    - semester: "first"
+  - slot_was_set:
+      - semester: "first"  
+  - action: utter_roll
+  - intent: tellroll_no
+    entities:
+    - roll_number: "1706810235"
+  - slot_was_set:
+      - roll_number: "1706810235"  
+  - action: action_result1
+
+- story: result path 2
+  steps:
+  - intent: askresult
+  - action: utter_ok
+  - action: utter_option
+  - intent: year
+    entities:
+    - optyear: "year"
+  - slot_was_set:
+      - optyear: "year"    
+  - action: utter_year
+  - intent: tellyear
+    entities:
+    - year: "second"
+  - slot_was_set:
+      - year: "second"    
+  - action: utter_roll
+  - intent: tellroll_no
+    entities:
+    - roll_number: "1706810235"
+  - slot_was_set:
+      - roll_number: "1706810235"    
+  - action: action_result2
+
+- story: result path 3
+  steps:
+  - intent: number_year_provided
+    entities:
+    - year: "third"
+    - roll_number: "1512685467"
+  - slot_was_set:
+      - year: "third"
+      - roll_number: "1512685467"    
+  - action: action_result2
+
+- story: result path 4
+  steps:
+  - intent: number_sem_provided
+    entities:
+    - semester: "third"
+    - roll_number: "1512685467"
+  - slot_was_set:
+      - semester: "third"
+      - roll_number: "1512685467"
+  - action: action_result1    
+# - story: happy name path
+#   steps:
+#   - intent: tell_name
+#   - action: utter_name
+#   - action: utter_my_name
+#   - intent: my_name
+  #   entities:
+  #   - name: "rahul"
+  # - slot_was_set:
+  #     - name: "rahul"
+#   - action: utter_mobile_number
+#   - intent: mobile_number
+#     entities:
+#     - number: "8209829808"
+#   - slot_was_set:
+#       - number: "8209829808"
+#   - action: utter_thanks
+
+# - story: happy details path one
+#   steps:
+#   - intent: performance
+#   - action: utter_resp
+#   - action: utter_my_roll
+#   - intent: roll_number
+#     entities:
+#     - rollnum: "1706810235"
+#   - slot_was_set:
+#       - roll_number: "1706810235"
+#   - action: utter_semester
+#   - intent: semester
+#     entities:
+#     - sem: "first"
+#   - slot_was_set:
+#       - semester: "first"
+#   - action: utter_thanks

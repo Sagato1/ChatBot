@@ -1,75 +1,211 @@
-version: "2.0"
-
-intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-  - complex_percent1:
-     use_entities:
-      - roll_number
-      - semester
-  - complex_percent2:
-     use_entities:
-      - roll_number
-      - semester  
-  - complex_marks1:
-     use_entities:
-      - roll_number
-      - semester  
-  - complex_marks2:
-     use_entities:
-      - roll_number
-      - semester    
-
-actions:
-  - validate_result
-  - action_submitresult
-
-forms: 
- result:
-  roll:
-   - type: from_entity
-     entity: roll_number
-  sem:
-   - type: from_entity
-     entity: semester
-
-slots:
- roll:
-  type: text
- sem:
-  type: text  
-
-entities:
-   - roll_number
-   - semester
-
-responses:
-  utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
-  utter_details_thanks:
-  - text: "Thanks for providing the given details \nemailid is : {registeremail}"
+version: '2.0'
+config:
+  store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- tell_name:
+    use_entities: true
+- play_video:
+    use_entities: true
+- out_of_scope:
+    use_entities: true
+- performance:
+    use_entities: true
+- askresult:
+    use_entities: true
+- asksemesterresult:
+    use_entities:
+    - semester
+- askyearresult:
+    use_entities:
+    - year
+- askyearmarks:
+    use_entities:
+    - year
+- asksemmarks:
+    use_entities:
+    - semester
+- asksempercentage:
+    use_entities:
+    - semester
+- askyearpercentage:
+    use_entities:
+    - year
+- tellroll_no:
+    use_entities:
+    - roll_number
+- tellsem:
+    use_entities:
+    - semester
+- tellyear:
+    use_entities:
+    - year
+- number_year_provided:
+    use_entities:
+    - year
+    - roll_number
+- number_sem_provided:
+    use_entities:
+    - semester
+    - roll_number
+- semester:
+    use_entities:
+    - optsem
+- year:
+    use_entities:
+    - optyear
+- my_roll_number:
+    use_entities:
+    - roll_number
+- my_semester:
+    use_entities:
+    - semester
+- my_name:
+    use_entities:
+    - name
+- mobile_number:
+    use_entities:
+    - number
+- nlu_fallback:
+    use_entities: true
+entities:
+- name
+- number
+- roll_number
+- semester
+- year
+- optsem
+- optyear
+slots:
+  name:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  number:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  roll_number:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  semester:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  year:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  optsem:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  optyear:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  requested_slot:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+responses:
+  utter_greet:
+  - text: Hey! How are you?
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_my_roll_number:
+  - text: What is your roll number ?
+  utter_my_semester:
+  - text: Which is your semester?
+  utter_resp:
+  - text: Yeah sure
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_name:
+  - text: My name is Innovate Yourself.
+  utter_my_name:
+  - text: What is your name?
+  utter_mobile_number:
+  - text: What is your mobile number?
+  utter_ask_name:
+  - text: What is your name?
+  utter_ask_number:
+  - text: What is your mobile number?
+  utter_ask_roll_number:
+  - text: What is your roll number ?
+  utter_ask_semester:
+  - text: Also tell me your semester ?
+  utter_ok:
+  - text: Yeah sure.
+  utter_option:
+  - text: Do you want to know the result of a year or a semester ?
+  utter_semester:
+  - text: What semester do you want to know the result of ?
+  utter_year:
+  - text: What year do you want to know the result of ?
+  utter_roll:
+  - text: Please provide your roll number.
+  utter_thanks:
+  - text: Thanks for providing the values.
+  utter_details_thanks:
+  - text: |-
+      Thanks for providing the given details 
+      Name: {Name},
+      Mobile Number: {Mobile_number}
+  utter_out_of_scope:
+  - text: Sorry, I didn't get what you said. Please rephrase what you said.
+actions:
+- action_submit
+- action_video
+- action_student
+- action_result1
+- action_result2
+- action_result3
+forms:
+  user_details_form:
+    name:
+    - entity: name
+      type: from_entity
+    number:
+    - entity: number
+      type: from_entity
+  student_details_form:
+    roll_number:
+    - entity: roll_number
+      type: from_entity
+    semester:
+    - entity: semester
+      type: from_entity
+e2e_actions: []

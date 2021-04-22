@@ -84,99 +84,19 @@ nlu:
     - so saad
     - so sad
 
-- intent: simple_percent
+- intent: tell_name
   examples: |
-    - what is my percentage
-    - tell the percentage
-    - how much percentage i got
-    - can you tell my percentage
+    - what is your name?
+    - tell me your name
+    - what others call you
+    - what should i call you?
 
-- intent: complex_percent1
-  examples: |
-  - Can you tell me the percentage for roll number [1706810235]("entity":"roll_number", "value":"1706810235")
-  - How much percentage did the roll number [4738296710]("entity":"roll_number", "value":"4738296710") get ?
-  - tell me thepecentage of roll number [5739204789]("entity":"roll_number", "value":"5739204789")
-  - what is the percentage of roll number [4456723891]("entity":"roll_number", "value":"4456723891")
-  - Tell me the percentage [5739982637]("entity":"roll_number", "value":"5739982637") get
-
-- intent: complex_percent2
-  examples: |
-  - Can you tell me the percentage for roll number [1706810235]("entity":"roll_number", "value":"1706810235") for [first]("entity":"semester", "value":"first") semester
-  - How much percent did the roll number [4738296710]("entity":"roll_number", "value":"4738296710") in [second]("entity":"semester", "value":"second") semester get ?
-  - tell me the pecent of roll number [5739204789]("entity":"roll_number", "value":"5739204789") for semester [fifth]("entity":"semester", "value":"fifth")
-  - what is the percentage of roll number [4456723891]("entity":"roll_number", "value":"4456723891") in sem [one]("entity":"semester", "value":"one")
-  - Tell me the percentage [5739982637]("entity":"roll_number", "value":"5739982637") get in [second]("entity":"semester", "value":"second") semester
-  - Can you tell me the percentage for [first]("entity":"semester", "value":"eight") semester for roll number [1676845235]("entity":"roll_number", "value":"1706810235")
-  - How much percentage did one get in [second]("entity":"semester", "value":"seventh") semester with roll number [4735689710]("entity":"roll_number", "value":"4738296710")?
-
-- intent: complex_marks1
-  examples: |
-  - Can you tell me the percentage for roll number [1706810235]("entity":"roll_number", "value":"1706810235")
-  - How much percentage did the roll number [4738296710]("entity":"roll_number", "value":"4738296710") get ?
-  - tell me thepecentage of roll number [5739204789]("entity":"roll_number", "value":"5739204789")
-  - what is the percentage of roll number [4456723891]("entity":"roll_number", "value":"4456723891")
-  - Tell me the percentage [5739982637]("entity":"roll_number", "value":"5739982637") get
-
-- intent: complex_marks2
-  examples: |
-  - Can you tell me the marks for roll number [1706810235]("entity":"roll_number", "value":"1706810235") for [first]("entity":"semester", "value":"first") semester
-  - How much marks did the roll number [4738296710]("entity":"roll_number", "value":"4738296710") in [second]("entity":"semester", "value":"second") semester get ?
-  - tell me the marks of roll number [5739204789]("entity":"roll_number", "value":"5739204789") for semester [fifth]("entity":"semester", "value":"fifth")
-  - what is the mark of roll number [4456723891]("entity":"roll_number", "value":"4456723891") in sem [one]("entity":"semester", "value":"one")
-  - Tell me the number [5739982637]("entity":"roll_number", "value":"5739982637") get in [second]("entity":"semester", "value":"second") semester
-  - Can you tell me the marks for [first]("entity":"semester", "value":"eight") semester for roll number [1676845235]("entity":"roll_number", "value":"1706810235")
-  - How much numbers did one get in [second]("entity":"semester", "value":"seventh") semester with roll number [4735689710]("entity":"roll_number", "value":"4738296710")?
-
-
-- intent : marks  
-  examples: |
-    - what are my marks
-    - how muc marks I got
-    - please tell me my marks
-    - can you tell me my marks
-
-- intent: sub_info
-  examples: |
-    - subject
-    - sub
-
-- intent: sem_info
-  examples: |
-    - semester
-    - sem
-     
-- intent: agg_percentage
-  examples: |
-    - all semester 
-    - total semester
-
-- intent: particular_semester
-  examples: |
-    - first 
-    - second 
-    - third
-    - fourth
-    - fifth
-    - sixth
-    - seventh
-    - eighth
-
-- intent: sub_name
-  examples: |
-    - subject 
-
-- intent: dept_hods
-  examples: |
-
-- intent: sub_teachers
-  examples: |
-
-- intent: fee_structure
-  examples: |
-
-- intent: student_info
-  examples: |
-  roll number
+# - intent: performance
+#   examples: |
+#     - I want to know about my academics perforamce
+#     - tell me my scores
+#     - Can you tell me my marks ?
+#     - How did I perform last year?
 
 - intent: bot_challenge
   examples: |
@@ -184,3 +104,431 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+- intent: my_name
+  examples: |
+    - my name is [sagar]{"entity":"name","value":"sagar"}
+    - my name is [rahul]{"entity":"name","value":"rahul"}
+    - my name is [apneet]{"entity":"name","value":"apneet"}
+    - [ashish]{"entity":"name","value":"ashish"} is my name
+    - [ashish]{"entity":"name","value":"ashish"} this side
+    - people call me [ashish]{"entity":"name","value":"ashish"}
+
+- intent: mobile_number
+  examples: |
+    - my number is [8209829808]{"entity":"number"}
+    - [8630176649]{"entity":"number"}
+    - [8209829808]{"entity":"number"} is my number
+    - my nobile number is [8209829808]{"entity":"number"}
+
+- intent: my_roll_number
+  examples: |
+    - my roll number is [1706810235]{"entity":"roll_number","value":"1706810235"}
+    - [8956810235]{"entity":"roll_number","value":"8956810235"} is my roll number
+    - [1709867235] it is{"entity":"roll_number","value":"1709867235"}
+    - it is [1606810235]{"entity":"roll_number","value":"1606810235"}
+
+- intent: my_semester
+  examples: |
+    - [first]{"entity":"semester"} semester
+    - [second]{"entity":"semester"} semester 
+    - [third]{"entity":"semester"} semester
+    - [fourth]{"entity":"semester"} semester
+
+- intent: play_video
+  examples: |
+    - play the mentioned video
+    - open the url
+    - open the link in browser
+    - show me the video that i asked for
+
+- intent: out_of_scope
+  examples: |
+    - I want to order food
+    - What is 2 + 2?
+    - Who's the US President?
+
+- intent: askresult
+  examples: |
+    - Can you tell me about my result?
+    - I want to know about my result.
+    - What is my result?
+    - Can you tell me my score?
+    - I want to know about my score.
+    - I want to know about my academic performance.
+    - Do you know how did i perform ?
+    - Do you know about my performance ?
+    - Can you tell my result.
+    - Tell my result
+    - How was my academic peformance ?
+    - How did I peform?
+    - Do you know about my scores?
+    - Do you know my result?
+    - Can you help me with my result
+    - Can you assist me knowing about my result?
+    - Please tell me about my performance.
+    - Can you tell me my result
+    - I want to know my result
+
+- intent: asksemesterresult
+  examples: |
+    - Can you tell me about my result of [first]{"entity":"semester"} semester?
+    - I want to know about my [second]{"entity":"semester"} sem result.
+    - What is my result of [third]{"entity":"semester"} semester?
+    - Can you tell me my score in [third]{"entity":"semester"} semester?
+    - I want to know about my score in [fourth]{"entity":"semester"} sem.
+    - I want to know about my academic performance in [fourth]{"entity":"semester"} sem.
+    - Do you know how did i perform in [first]{"entity":"semester"} semester?
+    - Do you know about my performance in [fifth]{"entity":"semester"} semester?
+    - Can you tell my result of [seventh]{"entity":"semester"} sem.
+    - Tell my result in [sixth]{"entity":"semester"} sem
+    - How was my academic peformance in [eighth]{"entity":"semester"} semester ?
+    - How did I peform in [eighth]{"entity":"semester"} sem?
+    - Do you know about my scores [eighth]{"entity":"semester"} sem?
+    - Do you know my result of [sixth]{"entity":"semester"} sem?
+    - Can you help me with my result in [fifth]{"entity":"semester"} sem
+    - Can you assist me knowing about my result [fifth]{"entity":"semester"} sem?
+    - Please tell me about my performance in [third]{"entity":"semester"} semester.
+    - Can you tell me my result of [sixth]{"entity":"semester"} semester
+    - I want to know my result in [seventh]{"entity":"semester"} semester
+
+- intent: askyearresult
+  examples: |
+    - Can you tell me about my result of [first]{"entity":"year"} year?
+    - I want to know about my [second]{"entity":"year"} year result.
+    - What is my result of [third]{"entity":"year"} year?
+    - Can you tell me my score in [third]{"entity":"year"} year?
+    - I want to know about my score in [fourth]{"entity":"year"} year.
+    - I want to know about my academic performance in [fourth]{"entity":"year"} yr.
+    - Do you know how did i perform in [first]{"entity":"year"} year?
+    - Do you know about my performance in [third]{"entity":"year"} year?
+    - Can you tell my result of [second]{"entity":"year"} year.
+    - Tell my result in [second]{"entity":"year"} year
+    - How was my academic peformance in [third]{"entity":"year"} year ?
+    - How did I peform in [third]{"entity":"year"} year?
+    - Do you know about my scores in [fourth]{"entity":"year"} year?
+    - Do you know my result of [fourth]{"entity":"year"} year?
+    - Can you help me with my result in [first]{"entity":"year"} year
+    - Can you assist me knowing about my result in [first]{"entity":"year"} year?
+    - Please tell me about my performance in [second]{"entity":"year"} year.
+    - Can you tell me my result of [second]{"entity":"year"} year
+    - I want to know my result in [second]{"entity":"year"} year
+
+- intent: askyearmarks
+  examples: |
+    - Can you tell me about my marks of [first]{"entity":"year"} year?
+    - I want to know about my [second]{"entity":"year"} year marks.
+    - What is my marks of [third]{"entity":"year"} year?
+    - Can you tell me my marks in [third]{"entity":"year"} year?
+    - I want to know about my marks in [fourth]{"entity":"year"} year.
+    - I want to know about my marks in [fourth]{"entity":"year"} yr.
+    - Do you know how was my marks in [first]{"entity":"year"} year?
+    - Do you know about my marks in [third]{"entity":"year"} year?
+    - Can you tell my marks in [second]{"entity":"year"} year.
+    - Tell my marks in [second]{"entity":"year"} year
+    - How was my marks in [third]{"entity":"year"} year ?
+    - How was my in [third]{"entity":"year"} year?
+    - Do you know about my marks in [fourth]{"entity":"year"} year?
+    - Do you know my marks of [fourth]{"entity":"year"} year?
+    - Can you help me with my marks in [first]{"entity":"year"} year
+    - Can you assist me knowing about my marks in [first]{"entity":"year"} year?
+    - Please tell me about my marks in [second]{"entity":"year"} year.
+    - Can you tell me my marks of [second]{"entity":"year"} year
+    - I want to know my marks in [second]{"entity":"year"} year
+    - What marks did I score in [first]{"entity":"year"} year?
+    - Tell me my total marks in [third]{"entity":"year"} yr.
+    - What was my number in [fourth]{"entity":"year"} year?
+    - Help me with my marks in [fifth]{"entity":"year"} year
+    - Assist me with numbers in [seventh]{"entity":"year"} yr.
+
+- intent: asksemmarks
+  examples: |
+    - Can you tell me about my marks of [first]{"entity":"semester"} semester?
+    - I want to know about my [second]{"entity":"semester"} sem marks.
+    - What is my marks of [third]{"entity":"semester"} sem?
+    - What are my marks in [sixth]{"entity":"semester"} sem
+    - Can you tell me my marks in [third]{"entity":"semester"} semester?
+    - I want to know about my marks in [fourth]{"entity":"semester"} semester.
+    - I want to know about my marks in [fourth]{"entity":"semester"} sem.
+    - Do you know how was my marks in [first]{"entity":"semester"} semester?
+    - Do you know about my marks in [third]{"entity":"semester"} semester?
+    - Can you tell my marks in [second]{"entity":"semester"} sem.
+    - Tell my marks in [second]{"entity":"semester"} sem
+    - How was my marks in [third]{"entity":"semester"} semester ?
+    - How was my numbers in [third]{"entity":"semester"} sem?
+    - Do you know about my marks in [fourth]{"entity":"semester"} sem?
+    - Do you know my marks of [fourth]{"entity":"semester"} semester?
+    - Can you help me with my marks in [first]{"entity":"semester"} semester
+    - Can you assist me knowing about my marks in [first]{"entity":"semester"} semester?
+    - Please tell me about my marks in [second]{"entity":"semester"} sem.
+    - Can you tell me my marks of [second]{"entity":"semester"} semester
+    - I want to know my marks in [second]{"entity":"semester"} semester
+    - What marks did I score in [first]{"entity":"semester"} semester?
+    - Tell me my total marks in [third]{"entity":"semester"} sem.
+    - What was my number in [fourth]{"entity":"semester"} semester?
+    - Help me with my marks in [fith]{"entity":"semester"} semester
+    - Assist me with numbers in [seventh]{"entity":"semester"} sem.
+
+- intent: asksempercentage
+  examples: |
+    - Can you tell me about my percentage of [first]{"entity":"semester"} semester?
+    - I want to know about my [second]{"entity":"semester"} sem percentage.
+    - What is my percentage of [third]{"entity":"semester"} sem?
+    - What are my percentage in [sixth]{"entity":"semester"} sem
+    - Can you tell me my percentage in [third]{"entity":"semester"} semester?
+    - I want to know about my percentage in [fourth]{"entity":"semester"} semester.
+    - I want to know about my percentage in [fourth]{"entity":"semester"} sem.
+    - Do you know how was my percentage in [first]{"entity":"semester"} semester?
+    - Do you know about my percentage in [third]{"entity":"semester"} semester?
+    - Can you tell my percentage in [second]{"entity":"semester"} sem.
+    - Tell my percentage in [second]{"entity":"semester"} sem
+    - How was my percentage in [third]{"entity":"semester"} semester ?
+    - How was my percent in [third]{"entity":"semester"} sem?
+    - Do you know about my percentage in [fourth]{"entity":"semester"} sem?
+    - Do you know my percentage of [fourth]{"entity":"semester"} semester?
+    - Can you help me with my percentage in [first]{"entity":"semester"} semester
+    - Can you assist me knowing about my percentage in [first]{"entity":"semester"} semester?
+    - Please tell me about my percentage in [second]{"entity":"semester"} sem.
+    - Can you tell me my percentage of [second]{"entity":"semester"} semester
+    - I want to know my percentage in [second]{"entity":"semester"} semester
+    - What percentage did I score in [first]{"entity":"semester"} semester?
+    - Tell me my total percentage in [third]{"entity":"semester"} sem.
+    - What was my percent in [fourth]{"entity":"semester"} semester?
+    - Help me with my percentage in [fifth]{"entity":"semester"} semester
+    - Assist me with percent in [seventh]{"entity":"semester"} sem.
+
+- intent: askyearpercentage
+  examples: |
+    - Can you tell me about my percentage of [first]{"entity":"year"} year?
+    - I want to know about my [second]{"entity":"year"} yr percentage.
+    - What is my percentage of [thirrd]{"entity":"year"} yr?
+    - What are my percentage in [sixth]{"entity":"year"} yr
+    - Can you tell me my percentage in [third]{"entity":"year"} year?
+    - I want to know about my percentage in [fourth]{"entity":"year"} year.
+    - I want to know about my percentage in [fourth]{"entity":"year"} yr.
+    - Do you know how was my percentage in [first]{"entity":"year"} year?
+    - Do you know about my percentage in [third]{"entity":"year"} year?
+    - Can you tell my percentage in [second]{"entity":"year"} yr.
+    - Tell my percentage in [second]{"entity":"year"} yr
+    - How was my percentage in [third]{"entity":"year"} year ?
+    - How was my percent in [third]{"entity":"year"} yr?
+    - Do you know about my percentage in [fourth]{"entity":"year"} yr?
+    - Do you know my percentage of [fourth]{"entity":"year"} year?
+    - Can you help me with my percentage in [first]{"entity":"year"} year
+    - Can you assist me knowing about my percentage in [first]{"entity":"year"} year?
+    - Please tell me about my percentage in [second]{"entity":"year"} yr.
+    - Can you tell me my percentage of [second]{"entity":"year"} year
+    - I want to know my percentage in [second]{"entity":"year"} year
+    - What percentage did I score in [first]{"entity":"year"} year?
+    - Tell me my total percentage in [third]{"entity":"year"} yr.
+    - What was my percent in [fourth]{"entity":"year"} year?
+    - Help me with my percentage in [fifth]{"entity":"year"} year
+    - Assist me with percent in [seventh]{"entity":"year"} yr.
+
+- intent: tellroll_no
+  examples: |
+    - my roll number is [1706810235]{"entity":"roll_number"}
+    - my roll no is [8756239070]{"entity":"roll_number"}
+    - my roll no. is [6745896734]{"entity":"roll_number"}
+    - my roll number is [1738498576]{"entity":"roll_number"}
+    - it is [1638958637]{"entity":"roll_number"}
+    - [1527389458]{"entity":"roll_number"}
+    - [1706810223]{"entity":"roll_number"}
+    - [1508756334]{"entity":"roll_number"}
+    - [1678345988]{"entity":"roll_number"}            
+    - [8537954837]{"entity":"roll_number"} is my roll number.
+    - [1849586736]{"entity":"roll_number"} is my roll no.
+    - [1949678429]{"entity":"roll_number"} is my roll no
+    - it's [1485478347]{"entity":"roll_number"}        
+
+- intent: tellsem
+  examples: |
+    - my semester is [third]{"entity":"semester"}
+    - my sem is [seventh]{"entity":"semester"}
+    - my semester is [eighth]{"entity":"semester"}
+    - my semester is [seventh]{"entity":"semester"}
+    - it is [third]{"entity":"semester"}
+    - [first]{"entity":"semester"}
+    - [first]{"entity":"semester"}
+    - [first]{"entity":"semester"}
+    - [third]{"entity":"semester"}
+    - [fourth]{"entity":"semester"}
+    - [fifth]{"entity":"semester"}
+    - [fifth]{"entity":"semester"}
+    - [sixth]{"entity":"semester"}
+    - [sixth]{"entity":"semester"}
+    - [seventh]{"entity":"semester"}
+    - [seventh]{"entity":"semester"}
+    - [eighth]{"entity":"semester"}
+    - [eighth]{"entity":"semester"}
+    - [second]{"entity":"semester"}            
+    - [fifth]{"entity":"semester"} is my semester.
+    - [sixth]{"entity":"semester"} is my sem.
+    - [Seventh]{"entity":"semester"} is my sem
+    - it's [fifth]{"entity":"semester"}        
+
+- intent: tellyear
+  examples: |
+    - my year is [third]{"entity":"year"}
+    - my year is [fourth]{"entity":"year"}
+    - my yr is [second]{"entity":"year"}
+    - my yr is [first]{"entity":"year"}
+    - it is [second]{"entity":"year"}
+    - it is [second]{"entity":"year"}
+    - it is [second]{"entity":"year"}
+    - it is [third]{"entity":"year"}
+    - it is [third]{"entity":"year"}
+    - it is [fourth]{"entity":"year"}
+    - it is [fourth]{"entity":"year"}
+    - it is [first]{"entity":"year"}
+    - it is [first]{"entity":"year"}
+    - [first]{"entity":"year"}
+    - [first]{"entity":"year"}
+    - [first]{"entity":"year"}
+    - [third]{"entity":"year"}
+    - [fourth]{"entity":"year"}
+    - [fourth]{"entity":"year"}
+    - [second]{"entity":"year"}
+    - [second]{"entity":"year"}
+    - [second]{"entity":"year"}
+    - [third]{"entity":"year"}
+    - [third]{"entity":"year"}
+    - [third]{"entity":"year"}            
+    - [fourth]{"entity":"year"} is my semester.
+    - [third]{"entity":"year"} is my sem.
+    - [second]{"entity":"year"} is my sem
+    - it's [third]{"entity":"year"}
+    - it's [third]{"entity":"year"}
+    - it's [second]{"entity":"year"}
+    - it's [second]{"entity":"year"}
+    - it's [first]{"entity":"year"}
+    - it's [first]{"entity":"year"}
+    - it's [fourth]{"entity":"year"}
+    - it's [fourth]{"entity":"year"}
+
+- intent: number_year_provided
+  examples: |
+    - my roll number is [1706810235]{"entity":"roll_number"} Can you tell me about my percentage of [first]{"entity":"year"} year?
+    - my roll number is [1795483748]{"entity":"roll_number"} I want to know about my [second]{"entity":"year"} yr percentage.
+    - my roll number is [1796857485]{"entity":"roll_number"} What is my percentage of third{"entity":"year"} yr?
+    - roll number is [1705398576]{"entity":"roll_number"}, What are my percentage in [sixth]{"entity":"year"} yr
+    - my roll number is [1606810235]{"entity":"roll_number"} Can you tell me my percentage in [third]{"entity":"year"} year?
+    - my roll number is [1604545687]{"entity":"roll_number"} I want to know about my percentage in [fourth]{"entity":"year"} year.
+    - my roll number is [1603278358]{"entity":"roll_number"}, I want to know about my percentage in [fourth]{"entity":"year"} yr.
+    - my roll number is [1604857012]{"entity":"roll_number"} Do you know how was my percentage in [first]{"entity":"year"} year?
+    - my roll number is [1643562354]{"entity":"roll_number"} Do you know about my percentage in [third]{"entity":"year"} year?
+    - roll number is [1556673465]{"entity":"roll_number"} Can you tell my percentage in [second]{"entity":"year"} yr.
+    - my roll number is [1506435456]{"entity":"roll_number"} Tell my percentage in [second]{"entity":"year"} yr
+    - my roll number is [1506537485]{"entity":"roll_number"} How was my percentage in [third]{"entity":"year"} year ?
+    - roll number is [1512685467]{"entity":"roll_number"} How was my percent in [third]{"entity":"year"} yr?
+    - my roll number is [1668566832]{"entity":"roll_number"} Do you know about my percentage in [fourth]{"entity":"year"} yr?
+    - my roll number is [1753644765]{"entity":"roll_number"} Do you know my percentage of [fourth]{"entity":"year"} year?
+    - my roll number is [1812685467]{"entity":"roll_number"} Can you help me with my percentage in [first]{"entity":"year"} year
+    - roll number is [1806810235]{"entity":"roll_number"}, Can you assist me knowing about my percentage in [first]{"entity":"year"} year?
+    - my roll number is [1806810235]{"entity":"roll_number"} Please tell me about my percentage in [second]{"entity":"year"} yr.
+    - roll number is [1912685467]{"entity":"roll_number"} Can you tell me my percentage of [second]{"entity":"year"} year
+    - my roll number is [1906810235]{"entity":"roll_number"} I want to know my percentage in [second]{"entity":"year"} year
+    - my roll number is [1506810235]{"entity":"roll_number"} What percentage did I score in [first]{"entity":"year"} year?
+    - roll number is [1512685467]{"entity":"roll_number"} Tell me my total percentage in [third]{"entity":"year"} yr.
+    - my roll number is [1476485903]{"entity":"roll_number"} What was my percent in [fourth]{"entity":"year"} year?
+    - my roll number is [1476459078]{"entity":"roll_number"} Help me with my percentage in [fourth]{"entity":"year"} year
+    - roll number is [1306810223]{"entity":"roll_number"}, Assist me with percent in [fourth]{"entity":"year"} yr.  
+    - Can you tell me about my percentage of [first]{"entity":"year"} year? my roll number is [1706810235]{"entity":"roll_number"}
+    - I want to know about my [second]{"entity":"year"} yr percentage my roll number is [1306810223]{"entity":"roll_number"}.
+    - What is my percentage of [third]{"entity":"year"} yr my roll number is [1476459078]{"entity":"roll_number"}?
+    - What are my percentage in [third]{"entity":"year"} yr my roll number is [1512685467]{"entity":"roll_number"}
+    - Can you tell me my percentage in [third]{"entity":"year"} year? my roll number is [1506810235]{"entity":"roll_number"}
+    - I want to know about my percentage in [fourth]{"entity":"year"} year my roll number is [1906810235]{"entity":"roll_number"}
+    - I want to know about my percentage in [fourth]{"entity":"year"} yr my roll number is [1912685467]{"entity":"roll_number"}
+    - Do you know how was my percentage in [first]{"entity":"year"} year? my roll number is [1806810235]{"entity":"roll_number"}
+    - Do you know about my percentage in [third]{"entity":"year"} year my roll number is [1806810235]{"entity":"roll_number"}
+    - Can you tell my percentage in [second]{"entity":"year"} yr my roll number is [1753644765]{"entity":"roll_number"}{"entity":"roll_number"}
+    - Tell my percentage in [second]{"entity":"year"} yr my roll number is [1512685467]{"entity":"roll_number"}
+    - How was my percentage in [third]{"entity":"year"} year ? my roll number is [1709785645]{"entity":"roll_number"}
+    - How was my percent in [third]{"entity":"year"} yr my roll number is [1098764587]{"entity":"roll_number"}
+    - Do you know about my percentage in [fourth]{"entity":"year"} yr my roll number is [1363845768]{"entity":"roll_number"}
+    - Do you know my percentage of [fourth]{"entity":"year"} year? roll number is [1948567998]{"entity":"roll_number"}
+    - Can you help me with my percentage in [first]{"entity":"year"} year my roll number is [1978675634]{"entity":"roll_number"}
+    - Can you assist me knowing about my percentage in [first]{"entity":"year"} year my roll number is [1378675634]{"entity":"roll_number"}
+    - Please tell me about my percentage in [second]{"entity":"year"} yr my roll number is [1709384759]{"entity":"roll_number"}
+    - Can you tell me my percentage of [second]{"entity":"year"} year my roll number is [188956348]{"entity":"roll_number"}
+    - I want to know my percentage in [second]{"entity":"year"} year roll number is [1478564589]{"entity":"roll_number"}
+    - What percentage did I score in [first]{"entity":"year"} year? roll number is [1767542387]{"entity":"roll_number"}
+    - Tell me my total percentage in [third]{"entity":"year"} yr roll number is [1709785689]{"entity":"roll_number"}
+    - What was my percent in [fourth]{"entity":"year"} year my roll number is [1783746598]{"entity":"roll_number"}
+    - Help me with my percentage in [fourth]{"entity":"year"} year my roll number is [1764576897]{"entity":"roll_number"}
+    - Assist me with percent in [fourth]{"entity":"year"} yr roll number is [1738487586]{"entity":"roll_number"}.
+
+- intent: number_sem_provided
+  examples: |
+    - my roll num is [1706810235]{"entity":"roll_number"} Can you tell me about my percentage of [first]{"entity":"semester"} semester?
+    - roll number is [1795483748]{"entity":"roll_number"} I want to know about my [second]{"entity":"semester"} sem percentage.
+    - my roll number is [1796857485]{"entity":"roll_number"} What is my percentage of [third]{"entity":"semester"} sem?
+    - my roll number is [1705398576]{"entity":"roll_number"}, What are my percentage in [seventh]{"entity":"semester"} sem
+    - my roll number is [1606810235]{"entity":"roll_number"} Can you tell me my percentage in [third]{"entity":"semester"} semester?
+    - my roll number is [1604545687]{"entity":"roll_number"} I want to know about my percentage in [sixth]{"entity":"semester"} semester.
+    - my roll number is [1603278358]{"entity":"roll_number"}, I want to know about my percentage in [fourth]{"entity":"semester"} sem.
+    - roll number is [1604857012]{"entity":"roll_number"} Do you know how was my percentage in [seventh]{"entity":"semester"} semester?
+    - my roll number is [1643562354]{"entity":"roll_number"} Do you know about my percentage in [third]{"entity":"semester"} semester?
+    - my roll number is [1556673465]{"entity":"roll_number"} Can you tell my percentage in [second]{"entity":"semester"} sem.
+    - my roll num is [1506435456]{"entity":"roll_number"} Tell my percentage in [second]{"entity":"semester"} sem
+    - my roll number is [1506537485]{"entity":"roll_number"} How was my percentage in [third]{"entity":"semester"} semester ?
+    - roll number is [1512685467]{"entity":"roll_number"} How was my percent in [third]{"entity":"semester"} sem?
+    - my roll number is [1668566832]{"entity":"roll_number"} Do you know about my percentage in [eighth]{"entity":"semester"} sem?
+    - my roll numb is [1753644765]{"entity":"roll_number"} Do you know my percentage of [fourth]{"entity":"semester"} semester?
+    - my roll num is [1812685467]{"entity":"roll_number"} Can you help me with my percentage in [first]{"entity":"semester"} semester
+    - roll number is [1806810235]{"entity":"roll_number"}, Can you assist me knowing about my percentage in [first]{"entity":"semester"} semester?
+    - my roll number is [1806810235]{"entity":"roll_number"} Please tell me about my percentage in [second]{"entity":"semester"} sem.
+    - my roll number is [1912685467]{"entity":"roll_number"} Can you tell me my percentage of [third]{"entity":"semester"} semester
+    - my roll number is [1906810235]{"entity":"roll_number"} I want to know my percentage in [second]{"entity":"semester"} semester
+    - my roll number is [1506810235]{"entity":"roll_number"} What percentage did I score in [first]{"entity":"semester"} semester?
+    - my roll number is [1512685467]{"entity":"roll_number"} Tell me my total percentage in [third]{"entity":"semester"} sem.
+    - my roll number is [1476485903]{"entity":"roll_number"} What was my percent in [fourth]{"entity":"semester"} semester?
+    - my roll number is [1476459078]{"entity":"roll_number"} Help me with my percentage in [fifth]{"entity":"semester"} semester
+    - my roll number is [1306810223]{"entity":"roll_number"}, Assist me with percent in [seventh]{"entity":"semester"} sem.  
+    - Can you tell me about my percentage of [first]{"entity":"semester"} semester? my roll number is [1706810235]{"entity":"roll_number"}
+    - I want to know about my [second]{"entity":"semester"} sem percentage my roll number is [1306810223]{"entity":"roll_number"}.
+    - What is my percentage of [third]{"entity":"semester"} sem my roll number is [1476459078]{"entity":"roll_number"}?
+    - What are my percentage in [fourth]{"entity":"semester"} sem my roll number is [1512685467]{"entity":"roll_number"}
+    - Can you tell me my percentage in [third]{"entity":"semester"} semester?my roll number is [1506810235]{"entity":"roll_number"}
+    - I want to know about my percentage in [fourth]{"entity":"semester"} semester my roll numb is [1906810235]{"entity":"roll_number"}
+    - I want to know about my percentage in [fifth]{"entity":"semester"} sem my roll number is [1912685467]{"entity":"roll_number"}
+    - Do you know how was my percentage in [first]{"entity":"semester"} semester? my roll number is [1806810235]{"entity":"roll_number"}
+    - Do you know about my percentage in [third]{"entity":"semester"} semester my roll num is [1806810235]{"entity":"roll_number"}
+    - Can you tell my percentage in [6]{"entity":"semester"} sem my roll number is [1753644765]{"entity":"roll_number"}
+    - Tell my percentage in [sixth]{"entity":"semester"} sem my roll number is [1512685467]{"entity":"roll_number"}
+    - How was my percentage in [third]{"entity":"semester"} semester ? my roll num is [1709785645]{"entity":"roll_number"}
+    - How was my percent in [third]{"entity":"semester"} sem my roll number is [1098764587]{"entity":"roll_number"}
+    - Do you know about my percentage in [eighth]{"entity":"semester"} sem my roll number is [1363845768]{"entity":"roll_number"}
+    - Do you know my percentage of [fourth]{"entity":"semester"} semester? my roll num is [1948567998]{"entity":"roll_number"}
+    - Can you help me with my percentage in [first]{"entity":"semester"} semester my roll number is [1978675634]{"entity":"roll_number"}
+    - Can you assist me knowing about my percentage in [fifth]{"entity":"semester"} semester my roll number is [1378675634]{"entity":"roll_number"}
+    - Please tell me about my percentage in [second]{"entity":"semester"} sem my roll number is [1709384759]{"entity":"roll_number"}
+    - Can you tell me my percentage of [third]{"entity":"semester"} semester my roll number is [188956348]{"entity":"roll_number"}
+    - I want to know my percentage in [second]{"entity":"semester"} semester my roll number is [1478564589]{"entity":"roll_number"}
+    - What percentage did I score in [first]{"entity":"semester"} semester? my roll num is [1767542387]{"entity":"roll_number"}
+    - Tell me my total percentage in [third]{"entity":"semester"} sem roll number is [1709785689]{"entity":"roll_number"}
+    - What was my percent in [fourth]{"entity":"semester"} semester roll number is [1783746598]{"entity":"roll_number"}
+    - Help me with my percentage in [sixth]{"entity":"semester"} semester my roll number is [1764576897]{"entity":"roll_number"}
+    - Assist me with percent in [seventh]{"entity":"semester"} sem my roll number is [1738487586]{"entity":"roll_number"}.
+
+- intent: semester
+  examples: |
+    - I want to know about [semester]{"entity":"optsem"}
+    - [semester]{"entity":"optsem"} result
+    - [semester]{"entity":"optsem"}
+    - [sem]{"entity":"optsem"}
+    - I want to know about [semester]{"entity":"optsem"} result
+    - I want to know about my [semester]{"entity":"optsem"} result
+    - I want to know about [sem]{"entity":"optsem"}
+    - I want to know about my [sem]{"entity":"optsem"} result
+
+- intent: year
+  examples: |
+    - I want to know about [year]{"entity":"optyear"}
+    - [year]{"entity":"year"} result
+    - [year]{"entity":"year"}
+    - I want to know about [year]{"entity":"optyear"} result
+    - I want to know about my [year]{"entity":"optyear"} result
+    - I want to know about my [year]{"entity":"optyear"}
+    - I want to know about my [year]{"entity":"optyear"} result   
