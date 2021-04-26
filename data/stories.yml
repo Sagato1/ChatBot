@@ -34,22 +34,28 @@ stories:
     - intent: play_video
     - action: action_video
 
-- story: result path 1
+- story: ask_result_for_sem_withmarks
   steps:
   - intent: askresult
   - action: utter_ok
   - action: utter_option
   - intent: semester
-    entities:
-    - optsem: "semester"
-  - slot_was_set:
-      - optsem: "semester"  
+  #   entities:
+  #   - optsem: "semester"
+  # - slot_was_set:
+  #     - optsem: "semester"  
   - action: utter_semester
   - intent: tellsem
     entities:
     - semester: "first"
   - slot_was_set:
-      - semester: "first"  
+      - semester: "first"
+  - action: utter_semformatoption
+  - intent: marks
+  #   entities:
+  #   - optsem: "marks"
+  # - slot_was_set:
+  #     - optsem: "marks"            
   - action: utter_roll
   - intent: tellroll_no
     entities:
@@ -58,22 +64,58 @@ stories:
       - roll_number: "1706810235"  
   - action: action_result1
 
-- story: result path 2
+- story: ask_result_for_sem_withpercent
+  steps:
+  - intent: askresult
+  - action: utter_ok
+  - action: utter_option
+  - intent: semester
+  #   entities:
+  #   - optsem: "semester"
+  # - slot_was_set:
+  #     - optsem: "semester"  
+  - action: utter_semester
+  - intent: tellsem
+    entities:
+    - semester: "first"
+  - slot_was_set:
+      - semester: "first"
+  - action: utter_semformatoption
+  - intent: percent
+  #   entities:
+  #   - optsem: "percentage"
+  # - slot_was_set:
+  #     - optsem: "percentage"            
+  - action: utter_roll
+  - intent: tellroll_no
+    entities:
+    - roll_number: "1706810235"
+  - slot_was_set:
+      - roll_number: "1706810235"  
+  - action: action_result1
+
+- story: ask_result_for_year_withmarks #Didn't ask roll number
   steps:
   - intent: askresult
   - action: utter_ok
   - action: utter_option
   - intent: year
-    entities:
-    - optyear: "year"
-  - slot_was_set:
-      - optyear: "year"    
+  #   entities:
+  #   - optyear: "year"
+  # - slot_was_set:
+  #     - optyear: "year"    
   - action: utter_year
   - intent: tellyear
     entities:
     - year: "second"
   - slot_was_set:
-      - year: "second"    
+      - year: "second"
+  - action: utter_yearformatoption
+  - intent: marks
+  #   entities:
+  #   - optsem: "marks"
+  # - slot_was_set:
+  #     - optsem: "marks"            
   - action: utter_roll
   - intent: tellroll_no
     entities:
@@ -82,7 +124,7 @@ stories:
       - roll_number: "1706810235"    
   - action: action_result2
 
-- story: result path 3
+- story: result_with_num_year_provided_tell_percent #working
   steps:
   - intent: number_year_provided
     entities:
@@ -93,7 +135,7 @@ stories:
       - roll_number: "1512685467"    
   - action: action_result2
 
-- story: result path 4
+- story: result_with_num_sem_provided_tell_percent #working
   steps:
   - intent: number_sem_provided
     entities:
@@ -103,6 +145,329 @@ stories:
       - semester: "third"
       - roll_number: "1512685467"
   - action: action_result1    
+
+- story: result_with_num_year_provided_tell_marks #working
+  steps:
+  - intent: number_year_provided_tell_marks
+    entities:
+    - year: "third"
+    - roll_number: "1512685467"
+  - slot_was_set:
+      - year: "third"
+      - roll_number: "1512685467"    
+  - action: action_result2
+
+- story: result_with_num_sem_provided_tell_marks #working
+  steps:
+  - intent: number_sem_provided_tell_marks
+    entities:
+    - semester: "third"
+    - roll_number: "1512685467"
+  - slot_was_set:
+      - semester: "third"
+      - roll_number: "1512685467"
+  - action: action_result1    
+
+- story: askresult_for_subject_withmarks #works in 2nd or 3rd time
+  steps:
+  - intent: askresult
+  - action: utter_ok
+  - action: utter_option
+  - intent: subject
+  #   entities:
+  #   - optsub: "subject"
+  # - slot_was_set:
+  #     - optsub: "subject"    
+  - action: utter_subject
+  - intent: tellsubject
+    entities:
+    - sub: "Data Structures"
+  - slot_was_set:
+      - sub: "Data Structures"    
+  - action: utter_subformatoption
+  - intent: marks
+  #   entities:
+  #   - optsem: "marks"
+  # - slot_was_set:
+  #     - optsem: "marks"        
+  - action: utter_roll
+  - intent: tellroll_no
+    entities:
+    - roll_number: "1706810235"
+  - slot_was_set:
+      - roll_number: "1706810235"    
+  - action: action_result3
+
+- story: askresult_for_subject_withpercent #roll number problem is
+  steps:
+  - intent: askresult
+  - action: utter_ok
+  - action: utter_option
+  - intent: subject
+  #   entities:
+  #   - optsub: "subject"
+  # - slot_was_set:
+  #     - optsub: "subject"    
+  - action: utter_subject
+  - intent: tellsubject
+    entities:
+    - sub: "Data Structures"
+  - slot_was_set:
+      - sub: "Data Structures"    
+  - action: utter_subformatoption
+  - intent: percent
+  #   entities:
+  #   - optsem: "percentage"
+  # - slot_was_set:
+  #     - optsem: "percentage"        
+  - action: utter_roll
+  - intent: tellroll_no
+    entities:
+    - roll_number: "1706810235"
+  - slot_was_set:
+      - roll_number: "1706810235"    
+  - action: action_result2
+
+- story: number_provided_telloverallpercent #working
+  steps:
+  - intent: number_provided_tell_overall_percent
+    entities:
+    - roll_number: "1512685467"
+  - slot_was_set:
+      - roll_number: "1512685467"
+  - action: action_result3    
+
+- story: number_provided_telloverallmarks #action_result4 problem
+  steps:
+  - intent: number_provided_tell_overall_marks
+    entities:
+    - roll_number: "1512685467"
+  - slot_was_set:
+      - roll_number: "1512685467"
+  - action: action_result4    
+
+- story: ask_result_for_year_withpercent #working
+  steps:
+  - intent: askresult
+  - action: utter_ok
+  - action: utter_option
+  - intent: year
+  #   entities:
+  #   - optyear: "year"
+  # - slot_was_set:
+  #     - optyear: "year"  
+  - action: utter_year
+  - intent: tellyear
+    entities:
+    - year: "first"
+  - slot_was_set:
+      - year: "first"
+  - action: utter_yearformatoption
+  - intent: percent
+  #   entities:
+  #   - optsem: "percentage"
+  # - slot_was_set:
+  #     - optsem: "percentage"            
+  - action: utter_roll
+  - intent: tellroll_no
+    entities:
+    - roll_number: "1706810235"
+  - slot_was_set:
+      - roll_number: "1706810235"  
+  - action: action_result2
+
+- story: ask_result_given_roll_withyearmarks
+  steps:
+  - intent: tell_rollno_askresult
+    entities:
+    - roll_number: "1706810235"
+  - slot_was_set:
+      - roll_number: "1706810235"  
+  - action: utter_ok
+  - action: utter_option
+  - intent: year
+  #   entities:
+  #   - optyear: "year"
+  # - slot_was_set:
+  #     - optyear: "year"    
+  - action: utter_year
+  - intent: tellyear
+    entities:
+    - year: "second"
+  - slot_was_set:
+      - year: "second"
+  - action: utter_yearformatoption
+  - intent: marks
+  #   entities:
+  #   - optsem: "marks"
+  # - slot_was_set:
+  #     - optsem: "marks"              
+  - action: action_result2
+
+- story: ask_result_given_roll_withyearpercent
+  steps:
+  - intent: tell_rollno_askresult
+    entities:
+    - roll_number: "1706810235"
+  - slot_was_set:
+      - roll_number: "1706810235"  
+  - action: utter_ok
+  - action: utter_option
+  - intent: year
+  #   entities:
+  #   - optyear: "year"
+  # - slot_was_set:
+  #     - optyear: "year"    
+  - action: utter_year
+  - intent: tellyear
+    entities:
+    - year: "second"
+  - slot_was_set:
+      - year: "second"
+  - action: utter_yearformatoption
+  - intent: percent
+  #   entities:
+  #   - optsem: "marks"
+  # - slot_was_set:
+  #     - optsem: "marks"              
+  - action: action_result2
+
+- story: ask_result_given_roll_withsempercent
+  steps:
+  - intent: tell_rollno_askresult
+    entities:
+    - roll_number: "1706810235"
+  - slot_was_set:
+      - roll_number: "1706810235"  
+  - action: utter_ok
+  - action: utter_option
+  - intent: semester
+  #   entities:
+  #   - optyear: "year"
+  # - slot_was_set:
+  #     - optyear: "year"    
+  - action: utter_year
+  - intent: tellsemester
+    entities:
+    - semester: "seventh"
+  - slot_was_set:
+      - semester: "seventh"
+  - action: utter_yearformatoption
+  - intent: percent
+  #   entities:
+  #   - optsem: "marks"
+  # - slot_was_set:
+  #     - optsem: "marks"              
+  - action: action_result1
+
+- story: ask_result_given_roll_withsemmarks
+  steps:
+  - intent: tell_rollno_askresult
+    entities:
+    - roll_number: "1706810235"
+  - slot_was_set:
+      - roll_number: "1706810235"  
+  - action: utter_ok
+  - action: utter_option
+  - intent: semester
+  #   entities:
+  #   - optyear: "year"
+  # - slot_was_set:
+  #     - optyear: "year"    
+  - action: utter_year
+  - intent: tellsemester
+    entities:
+    - semester: "six"
+  - slot_was_set:
+      - semester: "six"
+  - action: utter_yearformatoption
+  - intent: marks
+  #   entities:
+  #   - optsem: "marks"
+  # - slot_was_set:
+  #     - optsem: "marks"              
+  - action: action_result1
+
+- story: ask_result_given_roll_withsubmarks
+  steps:
+  - intent: tell_rollno_askresult
+    entities:
+    - roll_number: "1706810235"
+  - slot_was_set:
+      - roll_number: "1706810235"  
+  - action: utter_ok
+  - action: utter_option
+  - intent: subject
+  #   entities:
+  #   - optyear: "year"
+  # - slot_was_set:
+  #     - optyear: "year"    
+  - action: utter_year
+  - intent: tellsubject
+    entities:
+    - sub: "Maths"
+  - slot_was_set:
+      - sub: "Maths"
+  - action: utter_yearformatoption
+  - intent: marks
+  #   entities:
+  #   - optsem: "marks"
+  # - slot_was_set:
+  #     - optsem: "marks"              
+  - action: action_result3
+
+- story: num_sem_provided_tell_result_inmarks
+  steps:
+  - intent: asksemesterresult_givenroll
+    entities:
+    - semester: "third"
+    - roll_number: "1512685467"
+  - slot_was_set:
+      - semester: "third"
+      - roll_number: "1512685467"
+  - action: utter_semformatoption      
+  - intent: marks      
+  - action: action_result1
+
+- story: num_sem_provided_tell_result_inpercent
+  steps:
+  - intent: asksemesterresult_givenroll
+    entities:
+    - semester: "third"
+    - roll_number: "1512685467"
+  - slot_was_set:
+      - semester: "third"
+      - roll_number: "1512685467"
+  - action: utter_semformatoption      
+  - intent: percent
+  - action: action_result1  
+
+- story: num_yr_provided_tell_result_inmarks
+  steps:
+  - intent: askyearresult_givenroll
+    entities:
+    - year: "third"
+    - roll_number: "1512685467"
+  - slot_was_set:
+      - year: "third"
+      - roll_number: "1512685467"
+  - action: utter_yearformatoption      
+  - intent: marks      
+  - action: action_result2  
+
+- story: num_yr_provided_tell_result_inmarks
+  steps:
+  - intent: askyearresult_givenroll
+    entities:
+    - year: "third"
+    - roll_number: "1512685467"
+  - slot_was_set:
+      - year: "third"
+      - roll_number: "1512685467"
+  - action: utter_yearformatoption      
+  - intent: percent      
+  - action: action_result2   
+
 # - story: happy name path
 #   steps:
 #   - intent: tell_name

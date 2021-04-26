@@ -131,4 +131,18 @@ class ActionSubmit(Action):
     ) -> List[Dict[Text, Any]]:
         dispatcher.utter_message(template="utter_details_thanks",
                                  Name=tracker.get_slot("roll_number"),
-                                 Mobile_number=tracker.get_slot("semester"))
+                                 Mobile_number=tracker.get_slot("sub"))
+
+
+class ActionSubmit(Action):
+    def name(self) -> Text:
+        return "action_result4"
+
+    def run(
+        self,
+        dispatcher,
+        tracker: Tracker,
+        domain: "DomainDict",
+    ) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(template="utter_details_thanks",
+                                 Name=tracker.get_slot("roll_number"))

@@ -78,10 +78,18 @@ intents:
     - semester
 - my_name:
     use_entities:
-    - name
+    - name    
 - mobile_number:
     use_entities:
     - number
+- percent
+- marks
+- subject:
+    use_entities:
+    - optsub
+- tellsubject:
+    use_entities:
+    - sub    
 - nlu_fallback:
     use_entities: true
 entities:
@@ -92,7 +100,13 @@ entities:
 - year
 - optsem
 - optyear
+- sub
+- optsub
 slots:
+  sub:
+    type: text
+  optsub:
+    type: text  
   name:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
@@ -161,16 +175,24 @@ responses:
   - text: What is your mobile number?
   utter_ask_name:
   - text: What is your name?
+  utter_subject:
+  - text: Which subject you want to know the result of ?
   utter_ask_number:
   - text: What is your mobile number?
   utter_ask_roll_number:
   - text: What is your roll number ?
+  utter_subformatoption:
+  - text: Do you want your result in marks format or percent format ?
   utter_ask_semester:
   - text: Also tell me your semester ?
   utter_ok:
   - text: Yeah sure.
   utter_option:
-  - text: Do you want to know the result of a year or a semester ?
+  - text: Do you want to know the result of a year,semester or subject?
+  utter_yearformatoption:
+  - text: Do you want to get the result in marks format or percentage format of {year} year ? 
+  utter_semformatoption:
+  - text: Do you want to get the result in marks format or percentage format of {semester} semester ? 
   utter_semester:
   - text: What semester do you want to know the result of ?
   utter_year:
@@ -193,6 +215,7 @@ actions:
 - action_result1
 - action_result2
 - action_result3
+- action_result4
 forms:
   user_details_form:
     name:
