@@ -19,14 +19,6 @@ intents:
     use_entities: true
 - bot_challenge:
     use_entities: true
-- tell_name:
-    use_entities: true
-- play_video:
-    use_entities: true
-- out_of_scope:
-    use_entities: true
-- performance:
-    use_entities: true
 - askresult:
     use_entities: true
 - asksemesterresult:
@@ -70,18 +62,6 @@ intents:
 - year:
     use_entities:
     - optyear
-- my_roll_number:
-    use_entities:
-    - roll_number
-- my_semester:
-    use_entities:
-    - semester
-- my_name:
-    use_entities:
-    - name    
-- mobile_number:
-    use_entities:
-    - number
 - percent
 - marks
 - subject:
@@ -93,8 +73,6 @@ intents:
 - nlu_fallback:
     use_entities: true
 entities:
-- name
-- number
 - roll_number
 - semester
 - year
@@ -107,16 +85,6 @@ slots:
     type: text
   optsub:
     type: text  
-  name:
-    type: rasa.shared.core.slots.TextSlot
-    initial_value: null
-    auto_fill: true
-    influence_conversation: true
-  number:
-    type: rasa.shared.core.slots.TextSlot
-    initial_value: null
-    auto_fill: true
-    influence_conversation: true
   roll_number:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
@@ -190,9 +158,9 @@ responses:
   utter_option:
   - text: Do you want to know the result of a year,semester or subject?
   utter_yearformatoption:
-  - text: Do you want to get the result in marks format or percentage format of {year} year ? 
+  - text: Do you want to get the result in marks format or percentage format ? 
   utter_semformatoption:
-  - text: Do you want to get the result in marks format or percentage format of {semester} semester ? 
+  - text: Do you want to get the result in marks format or percentage format ? 
   utter_semester:
   - text: What semester do you want to know the result of ?
   utter_year:
@@ -204,8 +172,12 @@ responses:
   utter_details_thanks:
   - text: |-
       Thanks for providing the given details 
-      Name: {Name},
-      Mobile Number: {Mobile_number}
+      Roll Number: {Roll_Number},
+      Choice: {choice}
+  utter_details_th:
+  - text: |-
+      Thanks for providing the given details 
+      Roll Number: {Roll_Number}     
   utter_out_of_scope:
   - text: Sorry, I didn't get what you said. Please rephrase what you said.
 actions:

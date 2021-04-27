@@ -57,8 +57,8 @@ class ActionSubmit(Action):
         domain: "DomainDict",
     ) -> List[Dict[Text, Any]]:
         dispatcher.utter_message(template="utter_details_thanks",
-                                 Name=tracker.get_slot("name"),
-                                 Mobile_number=tracker.get_slot("number"))
+                                 Roll_Number=tracker.get_slot("name"),
+                                 choice=tracker.get_slot("number"))
 
 class ValidateStudentForm(Action):
     def name(self) -> Text:
@@ -88,8 +88,8 @@ class ActionSubmit(Action):
         domain: "DomainDict",
     ) -> List[Dict[Text, Any]]:
         dispatcher.utter_message(template="utter_details_thanks",
-                                 Name=tracker.get_slot("roll_number"),
-                                 Mobile_number=tracker.get_slot("semester"))
+                                 Roll_Number=tracker.get_slot("roll_number"),
+                                 choice=tracker.get_slot("semester"))
 
 class ActionSubmit(Action):
     def name(self) -> Text:
@@ -102,8 +102,8 @@ class ActionSubmit(Action):
         domain: "DomainDict",
     ) -> List[Dict[Text, Any]]:
         dispatcher.utter_message(template="utter_details_thanks",
-                                 Name=tracker.get_slot("roll_number"),
-                                 Mobile_number=tracker.get_slot("semester"))
+                                 Roll_Number=tracker.get_slot("roll_number"),
+                                 choice=tracker.get_slot("semester"))
 
 class ActionSubmit(Action):
     def name(self) -> Text:
@@ -116,8 +116,8 @@ class ActionSubmit(Action):
         domain: "DomainDict",
     ) -> List[Dict[Text, Any]]:
         dispatcher.utter_message(template="utter_details_thanks",
-                                 Name=tracker.get_slot("roll_number"),
-                                 Mobile_number=tracker.get_slot("year"))
+                                 Roll_Number=tracker.get_slot("roll_number"),
+                                 choice=tracker.get_slot("year"))
 
 class ActionSubmit(Action):
     def name(self) -> Text:
@@ -130,8 +130,8 @@ class ActionSubmit(Action):
         domain: "DomainDict",
     ) -> List[Dict[Text, Any]]:
         dispatcher.utter_message(template="utter_details_thanks",
-                                 Name=tracker.get_slot("roll_number"),
-                                 Mobile_number=tracker.get_slot("sub"))
+                                 Roll_Number=tracker.get_slot("roll_number"),
+                                 choice=tracker.get_slot("sub"))
 
 
 class ActionSubmit(Action):
@@ -144,5 +144,5 @@ class ActionSubmit(Action):
         tracker: Tracker,
         domain: "DomainDict",
     ) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(template="utter_details_thanks",
-                                 Name=tracker.get_slot("roll_number"))
+        dispatcher.utter_message(template="utter_details_th",
+                                 Roll_Number=tracker.get_slot("roll_number"))

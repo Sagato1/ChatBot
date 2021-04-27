@@ -84,13 +84,6 @@ nlu:
     - so saad
     - so sad
 
-- intent: tell_name
-  examples: |
-    - what is your name?
-    - tell me your name
-    - what others call you
-    - what should i call you?
-
 # - intent: performance
 #   examples: |
 #     - I want to know about my academics perforamce
@@ -104,49 +97,6 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
-
-- intent: my_name
-  examples: |
-    - my name is [sagar]{"entity":"name","value":"sagar"}
-    - my name is [rahul]{"entity":"name","value":"rahul"}
-    - my name is [apneet]{"entity":"name","value":"apneet"}
-    - [ashish]{"entity":"name","value":"ashish"} is my name
-    - [ashish]{"entity":"name","value":"ashish"} this side
-    - people call me [ashish]{"entity":"name","value":"ashish"}
-
-- intent: mobile_number
-  examples: |
-    - my number is [8209829808]{"entity":"number"}
-    - [8630176649]{"entity":"number"}
-    - [8209829808]{"entity":"number"} is my number
-    - my nobile number is [8209829808]{"entity":"number"}
-
-- intent: my_roll_number
-  examples: |
-    - my number is [1706810235]{"entity":"roll_number","value":"1706810235"}
-    - [8956810235]{"entity":"roll_number","value":"8956810235"} is my roll number
-    - [1709867235] it is{"entity":"roll_number","value":"1709867235"}
-    - it is [1606810235]{"entity":"roll_number","value":"1606810235"}
-
-- intent: my_semester
-  examples: |
-    - [first]{"entity":"semester"} semester
-    - [second]{"entity":"semester"} semester 
-    - [third]{"entity":"semester"} semester
-    - [fourth]{"entity":"semester"} semester
-
-- intent: play_video
-  examples: |
-    - play the mentioned video
-    - open the url
-    - open the link in browser
-    - show me the video that i asked for
-
-- intent: out_of_scope
-  examples: |
-    - I want to order food
-    - What is 2 + 2?
-    - Who's the US President?
 
 - intent: askresult
   examples: |
@@ -244,7 +194,7 @@ nlu:
     - Can you tell my result of [seventh]{"entity":"semester"} sem.
     - Tell my result in [sixth]{"entity":"semester"} sem
     - How was my academic peformance in [eighth]{"entity":"semester"} semester ?
-    - How did I peform in [eighth]{"entity":"semester"} sem?
+    - How did I perform in [eighth]{"entity":"semester"} sem?
     - Do you know about my scores [eighth]{"entity":"semester"} sem?
     - Do you know my result of [sixth]{"entity":"semester"} sem?
     - Can you help me with my result in [fifth]{"entity":"semester"} sem
@@ -288,7 +238,7 @@ nlu:
     - Can you tell my marks in [second]{"entity":"year"} year.
     - Tell my marks in [second]{"entity":"year"} year
     - How was my marks in [third]{"entity":"year"} year ?
-    - How was my in [third]{"entity":"year"} year?
+    - How was my marks in [third]{"entity":"year"} year?
     - Do you know about my marks in [fourth]{"entity":"year"} year?
     - Do you know my marks of [fourth]{"entity":"year"} year?
     - Can you help me with my marks in [first]{"entity":"year"} year
@@ -297,7 +247,7 @@ nlu:
     - Can you tell me my marks of [second]{"entity":"year"} year
     - I want to know my marks in [second]{"entity":"year"} year
     - What marks did I score in [first]{"entity":"year"} year?
-    - Tell me my total marks in [third]{"entity":"year"} yr.
+    - Tell me my marks in [third]{"entity":"year"} yr.
     - What was my number in [fourth]{"entity":"year"} year?
     - Help me with my marks in [fifth]{"entity":"year"} year
     - Assist me with numbers in [seventh]{"entity":"year"} yr.
@@ -324,7 +274,7 @@ nlu:
     - Please tell me about my marks in [second]{"entity":"semester"} sem.
     - Can you tell me my marks of [second]{"entity":"semester"} semester
     - I want to know my marks in [second]{"entity":"semester"} semester
-    - What marks did I score in [first]{"entity":"semester"} semester?
+    - What marks did I marks in [first]{"entity":"semester"} semester?
     - Tell me my total marks in [third]{"entity":"semester"} sem.
     - What was my number in [fourth]{"entity":"semester"} semester?
     - Help me with my marks in [fith]{"entity":"semester"} semester
@@ -420,6 +370,60 @@ nlu:
     - [8537954837]{"entity":"roll_number"} is my roll number.
     - [1849586736]{"entity":"roll_number"} is my roll no.
     - [1949678429]{"entity":"roll_number"} is my roll no
+    - [1093487564]{"entity":"roll_number"}
+    - [1873498592]{"entity":"roll_number"}
+    - [1903945867]{"entity":"roll_number"}
+    - [1803853785]{"entity":"roll_number"}
+    - [1509658337]{"entity":"roll_number"}
+    - [1704593847]{"entity":"roll_number"}
+    - [1707589847]{"entity":"roll_number"}
+    - [1704298347]{"entity":"roll_number"}
+    - [1704596987]{"entity":"roll_number"}
+    - [1704596458]{"entity":"roll_number"}
+    - [1704593692]{"entity":"roll_number"}
+    - [1702984843]{"entity":"roll_number"}
+    - [1704579384]{"entity":"roll_number"}
+    - [1709786756]{"entity":"roll_number"}
+    - [1704593843]{"entity":"roll_number"}
+    - [1704593442]{"entity":"roll_number"}
+    - [1704595841]{"entity":"roll_number"}
+    - [1704573847]{"entity":"roll_number"}
+    - [1704523846]{"entity":"roll_number"}
+    - [1903945861]{"entity":"roll_number"}
+    - [1203875865]{"entity":"roll_number"}
+    - [1103945845]{"entity":"roll_number"}
+    - [1303935867]{"entity":"roll_number"}
+    - [1203955867]{"entity":"roll_number"}
+    - [1703985867]{"entity":"roll_number"}
+    - [1803925867]{"entity":"roll_number"}
+    - [1903975847]{"entity":"roll_number"}
+    - [1403995857]{"entity":"roll_number"}
+    - [1673418582]{"entity":"roll_number"}
+    - [1073458592]{"entity":"roll_number"}
+    - [1873478532]{"entity":"roll_number"}
+    - [1873408502]{"entity":"roll_number"}
+    - [1873468512]{"entity":"roll_number"}
+    - [1873428532]{"entity":"roll_number"}
+    - [1873418522]{"entity":"roll_number"}
+    - [1873458542]{"entity":"roll_number"}
+    - [1873418552]{"entity":"roll_number"}
+    - [1873488592]{"entity":"roll_number"}
+    - [1873498502]{"entity":"roll_number"}
+    - [1873458532]{"entity":"roll_number"}
+    - [1873438522]{"entity":"roll_number"}
+    - [1873478552]{"entity":"roll_number"}
+    - [1873498562]{"entity":"roll_number"}
+    - [1573408582]{"entity":"roll_number"}
+    - [1573408592]{"entity":"roll_number"}
+    - [1573418502]{"entity":"roll_number"}
+    - [1405428322]{"entity":"roll_number"}
+    - [1574458562]{"entity":"roll_number"}
+    - [1403478392]{"entity":"roll_number"}
+    - [1407488392]{"entity":"roll_number"}
+    - [1408448392]{"entity":"roll_number"}
+    - [1408478392]{"entity":"roll_number"}
+    - [1402298392]{"entity":"roll_number"}
+    - [1400498392]{"entity":"roll_number"}
 
 - intent: tellsem
   examples: |
@@ -447,6 +451,30 @@ nlu:
     - [6th]{"entity":"semester"} is my sem.
     - [Seventh]{"entity":"semester"} is my sem
     - it's [5th]{"entity":"semester"} semester       
+    - [1]{"entity":"semester"}
+    - [2]{"entity":"semester"}
+    - [3]{"entity":"semester"}
+    - [4]{"entity":"semester"}
+    - [5]{"entity":"semester"}
+    - [6]{"entity":"semester"}
+    - [7]{"entity":"semester"}
+    - [8]{"entity":"semester"}
+    - [1st]{"entity":"semester"}
+    - [2nd]{"entity":"semester"}
+    - [3rd]{"entity":"semester"}
+    - [4th]{"entity":"semester"}
+    - [5th]{"entity":"semester"}
+    - [6th]{"entity":"semester"}
+    - [7th]{"entity":"semester"}
+    - [8th]{"entity":"semester"}
+    - [first]{"entity":"semester"}
+    - [second]{"entity":"semester"}
+    - [third]{"entity":"semester"}
+    - [fourth]{"entity":"semester"}
+    - [fifth]{"entity":"semester"}
+    - [sixth]{"entity":"semester"}
+    - [seventh]{"entity":"semester"}
+    - [eighth]{"entity":"semester"}
 
 - intent: tellyear
   examples: |
@@ -484,14 +512,14 @@ nlu:
     - it's [second]{"entity":"year"} year
     - it's [1]{"entity":"year"} year
     - it's [1st]{"entity":"year"} year
-    - it's [fourth]{"entity":"year"}
+    - it's [fourth]{"entity":"year"} year
     - it's [4th]{"entity":"year"} year
     - [4th]{"entity":"year"} year
     - I want to know the result of [3rd]{"entity":"year"} year
 
 - intent: tellsubject
   examples: |
-    - [Data Structures]{"entity":"sub"}
+    - [Data Structures]{"entity":"sub"} 
     - [Physics]{"entity":"sub"}
     - [Chemistry]{"entity":"sub"}
     - [Operating System]{"entity":"sub"}
@@ -828,6 +856,7 @@ nlu:
     - semester result
     - semester
     - sem
+    - tell me the result of semester
     - I want to know about sem result
     - I want to know about my semester result
     - I want to know about sem
@@ -843,6 +872,7 @@ nlu:
     - I want to know about my year result
     - I want to know about my year
     - I want to know about my year result
+    - it is the year result i want to know about
 
 - intent: subject
   examples: |
@@ -853,6 +883,7 @@ nlu:
     - SUB
     - I want to know the result of subject
     - I want to know the subject result
+    - Give me the subject result
     - Subject result
 
 - intent: marks
@@ -861,17 +892,21 @@ nlu:
     - Marks
     - I want to get the result in marks format
     - I want to get the result in number format
-    - I want the result in percentage format
+    - I want the result in marks format
+    - give the result in marks format
+    - tell me the result in marks format
     - result should be in marks format
     - give the result in mark format
     - result has to be marks format
     - give in marks format
+    - marks format
 
 - intent: percent
   examples: |
     - percenatage
     - Percentage
     - percent
+    - percentage format
     - %
     - I want to get the result in % format
     - I want to get the result in percentage format
@@ -879,6 +914,7 @@ nlu:
     - give the result in percentage format
     - result has to be percen format
     - give in % format
+    - give the result in percentage format
 
 - intent: asksemesterresult_givenroll
   examples: |

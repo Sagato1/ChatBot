@@ -12,47 +12,47 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
-- rule: Activate form
-  steps:
-  - intent: tell_name
-  - action: utter_name
-  - action: user_details_form
-  - active_loop: user_details_form
+# - rule: Activate form
+#   steps:
+#   - intent: tell_name
+#   - action: utter_name
+#   - action: user_details_form
+#   - active_loop: user_details_form
 
-- rule: Submit form
-  condition:
-  # Condition that form is active.
-  - active_loop: user_details_form
-  steps:
-  # Form is deactivated
-  - action: user_details_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-  # The actions we want to run when the form is submitted.
-  - action: action_submit
+# - rule: Submit form
+#   condition:
+#   # Condition that form is active.
+#   - active_loop: user_details_form
+#   steps:
+#   # Form is deactivated
+#   - action: user_details_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   # The actions we want to run when the form is submitted.
+#   - action: action_submit
 
-- rule: Activate form 2
-  steps:
-  - intent: performance
-  - action: utter_resp
-  - action: student_details_form
-  - active_loop: student_details_form
+# - rule: Activate form 2
+#   steps:
+#   - intent: performance
+#   - action: utter_resp
+#   - action: student_details_form
+#   - active_loop: student_details_form
 
-- rule: Submit form
-  condition:
-  # Condition that form is active.
-  - active_loop: student_details_form
-  steps:
-  # Form is deactivated
-  - action: student_details_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-  # The actions we want to run when the form is submitted.
-  - action: action_student
+# - rule: Submit form
+#   condition:
+#   # Condition that form is active.
+#   - active_loop: student_details_form
+#   steps:
+#   # Form is deactivated
+#   - action: student_details_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   # The actions we want to run when the form is submitted.
+#   - action: action_student
 
-- rule: out-of-scope
-  steps:
-  - intent: nlu_fallback
-  - action: utter_out_of_scope
+# - rule: out-of-scope
+#   steps:
+#   - intent: nlu_fallback
+#   - action: utter_out_of_scope

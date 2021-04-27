@@ -34,6 +34,16 @@ stories:
     - intent: play_video
     - action: action_video
 
+
+
+
+
+
+
+
+
+
+# ask result
 - story: ask_result_for_sem_withmarks
   steps:
   - intent: askresult
@@ -112,61 +122,17 @@ stories:
       - year: "second"
   - action: utter_yearformatoption
   - intent: marks
-  #   entities:
-  #   - optsem: "marks"
-  # - slot_was_set:
-  #     - optsem: "marks"            
   - action: utter_roll
   - intent: tellroll_no
     entities:
     - roll_number: "1706810235"
   - slot_was_set:
-      - roll_number: "1706810235"    
+      - roll_number: "1706810235"     
+  #   entities:
+  #   - optsem: "marks"
+  # - slot_was_set:
+  #     - optsem: "marks"               
   - action: action_result2
-
-- story: result_with_num_year_provided_tell_percent #working
-  steps:
-  - intent: number_year_provided
-    entities:
-    - year: "third"
-    - roll_number: "1512685467"
-  - slot_was_set:
-      - year: "third"
-      - roll_number: "1512685467"    
-  - action: action_result2
-
-- story: result_with_num_sem_provided_tell_percent #working
-  steps:
-  - intent: number_sem_provided
-    entities:
-    - semester: "third"
-    - roll_number: "1512685467"
-  - slot_was_set:
-      - semester: "third"
-      - roll_number: "1512685467"
-  - action: action_result1    
-
-- story: result_with_num_year_provided_tell_marks #working
-  steps:
-  - intent: number_year_provided_tell_marks
-    entities:
-    - year: "third"
-    - roll_number: "1512685467"
-  - slot_was_set:
-      - year: "third"
-      - roll_number: "1512685467"    
-  - action: action_result2
-
-- story: result_with_num_sem_provided_tell_marks #working
-  steps:
-  - intent: number_sem_provided_tell_marks
-    entities:
-    - semester: "third"
-    - roll_number: "1512685467"
-  - slot_was_set:
-      - semester: "third"
-      - roll_number: "1512685467"
-  - action: action_result1    
 
 - story: askresult_for_subject_withmarks #works in 2nd or 3rd time
   steps:
@@ -228,24 +194,6 @@ stories:
       - roll_number: "1706810235"    
   - action: action_result2
 
-- story: number_provided_telloverallpercent #working
-  steps:
-  - intent: number_provided_tell_overall_percent
-    entities:
-    - roll_number: "1512685467"
-  - slot_was_set:
-      - roll_number: "1512685467"
-  - action: action_result3    
-
-- story: number_provided_telloverallmarks #action_result4 problem
-  steps:
-  - intent: number_provided_tell_overall_marks
-    entities:
-    - roll_number: "1512685467"
-  - slot_was_set:
-      - roll_number: "1512685467"
-  - action: action_result4    
-
 - story: ask_result_for_year_withpercent #working
   steps:
   - intent: askresult
@@ -276,6 +224,94 @@ stories:
       - roll_number: "1706810235"  
   - action: action_result2
 
+
+
+
+
+
+
+# number year provided tell percentage
+- story: result_with_num_year_provided_tell_percent #working
+  steps:
+  - intent: number_year_provided
+    entities:
+    - year: "third"
+    - roll_number: "1512685467"
+  - slot_was_set:
+      - year: "third"
+      - roll_number: "1512685467"    
+  - action: action_result2
+
+
+
+# number semester provided tell percentage
+- story: result_with_num_sem_provided_tell_percent #working
+  steps:
+  - intent: number_sem_provided
+    entities:
+    - semester: "third"
+    - roll_number: "1512685467"
+  - slot_was_set:
+      - semester: "third"
+      - roll_number: "1512685467"
+  - action: action_result1    
+
+
+
+
+# number year provided tell marks
+- story: result_with_num_year_provided_tell_marks #working
+  steps:
+  - intent: number_year_provided_tell_marks
+    entities:
+    - year: "third"
+    - roll_number: "1512685467"
+  - slot_was_set:
+      - year: "third"
+      - roll_number: "1512685467"    
+  - action: action_result2
+
+
+
+# number semester provided tell marks
+- story: result_with_num_sem_provided_tell_marks #working
+  steps:
+  - intent: number_sem_provided_tell_marks
+    entities:
+    - semester: "third"
+    - roll_number: "1512685467"
+  - slot_was_set:
+      - semester: "third"
+      - roll_number: "1512685467"
+  - action: action_result1    
+
+
+
+# number given tell overall percentage
+- story: number_provided_telloverallpercent #working
+  steps:
+  - intent: number_provided_tell_overall_percent
+    entities:
+    - roll_number: "1512685467"
+  - slot_was_set:
+      - roll_number: "1512685467"
+  - action: action_result3    
+
+
+
+# number given ask overall marks
+- story: number_provided_telloverallmarks #action_result4 problem
+  steps:
+  - intent: number_provided_tell_overall_marks
+    entities:
+    - roll_number: "1512685467"
+  - slot_was_set:
+      - roll_number: "1512685467"
+  - action: action_result4    
+
+
+
+# tell roll number ask result
 - story: ask_result_given_roll_withyearmarks
   steps:
   - intent: tell_rollno_askresult
@@ -416,6 +452,15 @@ stories:
   #     - optsem: "marks"              
   - action: action_result3
 
+
+
+
+
+
+
+
+
+# ask semester result given roll number
 - story: num_sem_provided_tell_result_inmarks
   steps:
   - intent: asksemesterresult_givenroll
@@ -442,6 +487,14 @@ stories:
   - intent: percent
   - action: action_result1  
 
+
+
+
+
+
+
+
+# ask year result given roll number
 - story: num_yr_provided_tell_result_inmarks
   steps:
   - intent: askyearresult_givenroll
@@ -467,6 +520,18 @@ stories:
   - action: utter_yearformatoption      
   - intent: percent      
   - action: action_result2   
+
+
+
+
+
+
+
+
+
+
+
+
 
 # - story: happy name path
 #   steps:
