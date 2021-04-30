@@ -5,10 +5,6 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- greet:
-    use_entities: true
-- goodbye:
-    use_entities: true
 - affirm:
     use_entities: true
 - deny:
@@ -59,14 +55,56 @@ intents:
 - semester:
     use_entities:
     - optsem
-- year:
-    use_entities:
-    - optyear
+- year
+- bot_info
 - percent
+- starting_conversation
+- ending_conversation
+- Byes
 - marks
-- subject:
+- askyearresult_givenroll:
     use_entities:
-    - optsub
+    - roll_number
+    - year 
+- asksemesterresult_givenroll: 
+    use_entities:
+    - roll_number
+    - semester
+- subject
+- number_sem_provided_tell_marks:
+    use_entities:
+    - roll_number
+    - semester
+- number_year_provided_tell_marks:
+    use_entities:
+    - roll_number
+    - year
+- number_provided_tell_overall_marks:
+    use_entities:
+    - roll_number
+- number_provided_tell_overall_percent:
+    use_entities:
+    - roll_number
+- overall_marks
+- overall_percentage
+- tell_rollno_askresult:
+    use_entities:
+    - roll_number
+- out_of_scope
+- campus_view
+- canteen_menu
+- fee_structure:
+    use_entities:
+    - year
+- college_map
+- subject_teacher:
+    use_entities:
+    - sub
+- ask_faculty_info
+- ask_hod_info
+- hod_info:
+    use_entites:
+    - dept
 - tellsubject:
     use_entities:
     - sub    
@@ -76,15 +114,13 @@ entities:
 - roll_number
 - semester
 - year
-- optsem
-- optyear
 - sub
-- optsub
+- dept
 slots:
   sub:
     type: text
-  optsub:
-    type: text  
+  dept:
+    type: text    
   roll_number:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
@@ -99,17 +135,7 @@ slots:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
     auto_fill: true
-    influence_conversation: true
-  optsem:
-    type: rasa.shared.core.slots.TextSlot
-    initial_value: null
-    auto_fill: true
-    influence_conversation: true
-  optyear:
-    type: rasa.shared.core.slots.TextSlot
-    initial_value: null
-    auto_fill: true
-    influence_conversation: true
+    influence_conversation: true  
   requested_slot:
     type: rasa.shared.core.slots.UnfeaturizedSlot
     initial_value: null
@@ -118,6 +144,27 @@ slots:
 responses:
   utter_greet:
   - text: Hey! How are you?
+  utter_nice:
+  - text: Well,That's very nice!!
+          How can I assist you ?
+  utter_cantdomuch:
+  - text: Sorry Sir,I'm designed to perform very specific features
+          So I can't do much to cheer you up.
+  utter_welcome:
+  - text: You're Welcome!
+  utter_info:
+  - text: |- 
+      I'm a ChatBot designed for Meerut Institute of Engineering and Technology
+      So you can call me a Miet Bot and I am developed by
+      Ritabh Kumar
+      Rhea Singh
+      Divyanshi Garg
+      Sagar Tomar 
+      I can assist you regarding most of things related to miet such as :-
+      I can help you with knowing the fee structure of miet
+      I can help you knowing about the miet faculties and different department HOD's
+      I can also assist you with your result
+      I can also give you miet campus view           
   utter_cheer_up:
   - image: https://i.imgur.com/nGF1K8f.jpg
     text: 'Here is something to cheer you up:'
@@ -177,30 +224,32 @@ responses:
   utter_details_th:
   - text: |-
       Thanks for providing the given details 
-      Roll Number: {Roll_Number}     
-  utter_out_of_scope:
+      Roll Number: {Roll_Number}
+  utter_give_hod_info:
+    - text: Here is the hod info          
+  utter_give_teacher_info:
+    - text: Here is the teacher info 
+  utter_campus_pictures:
+    - text: Here are the campus pictures  
+  utter_tell_fee:
+    - text: Here is the fee structure 
+  utter_canteen_menu:
+    - text: Here is the menu 
+  utter_show_map:
+    - text: Here is the map 
+  utter_yes:
+    - text: Yeah Definately!!  
+  utter_come_again:
   - text: Sorry, I didn't get what you said. Please rephrase what you said.
 actions:
-- action_submit
-- action_video
-- action_student
 - action_result1
 - action_result2
 - action_result3
 - action_result4
-forms:
-  user_details_form:
-    name:
-    - entity: name
-      type: from_entity
-    number:
-    - entity: number
-      type: from_entity
-  student_details_form:
-    roll_number:
-    - entity: roll_number
-      type: from_entity
-    semester:
-    - entity: semester
-      type: from_entity
+- action_give_hod_info
+- action_give_teacher_info
+- action_campus_pictures
+- action_tell_fee
+- action_canteen_menu
+- action_show_map
 e2e_actions: []
