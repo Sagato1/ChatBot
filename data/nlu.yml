@@ -103,20 +103,20 @@ nlu:
     - Can you tell me who teaches [physics]{"entity":"sub"} in miet
     - I want to know who is the faculty for [Mathematics]{"entity":"sub"}
     - Tell me who teaches [Basics Electronics]{"entity":"sub"}
-    - Tell me who teaches [Engineering Maths-I]{"entity":"sub"}
-    - Tell me who teaches [Basics Electrical Engg.]{"entity":"sub"}
+    - Tell me who teaches [Engineering Maths]{"entity":"sub"}
+    - Tell me who teaches [Basics Electrical Engg]{"entity":"sub"}
     - Tell me who teaches [Operating System]{"entity":"sub"}
     - Tell me who teaches [Workshop Practice]{"entity":"sub"}
     - Tell me who teaches [Professional Communication]{"entity":"sub"}                
-    - Can you tell me who teaches [Engineering Maths-II]{"entity":"sub"} in miet
-    - Can you tell me who teaches [Elements of Mechanical Engg.]{"entity":"sub"} in miet
+    - Can you tell me who teaches [Engineering Maths]{"entity":"sub"} in miet
+    - Can you tell me who teaches [Elements of Mechanical Engg]{"entity":"sub"} in miet
     - Can you tell me who teaches [Computer System & Programming in C]{"entity":"sub"} in miet
     - Can you tell me who teaches [Engineering Chemistry]{"entity":"sub"} in miet
-    - Can you tell me who teaches [Engg. Chemistry Lab	Practical]{"entity":"sub"} in miet                
+    - Can you tell me who teaches [Engg Chemistry Lab]{"entity":"sub"} in miet                
     - Can you tell me who teaches [Universal Human Values &  Professional Ethics]{"entity":"sub"} in miet
     - I want to know who is the faculty for [Laser System and Application]{"entity":"sub"}
     - I want to know who is the faculty for [Digital Logic Design Lab]{"entity":"sub"}
-    - I want to know who is the faculty for [Mathematics-III]{"entity":"sub"}
+    - I want to know who is the faculty for [Mathematics]{"entity":"sub"}
     - I want to know who is the faculty for [Theory of Automata and Formal Languages]{"entity":"sub"}
     - I want to know who is the faculty for [Python Language Programming Lab]{"entity":"sub"}
     - I want to know who is the faculty for [MANAGERIAL ECONOMICS]{"entity":"sub"}
@@ -747,12 +747,12 @@ nlu:
     - Subject name is [Automata]{"entity":"sub"}
     - The subject is [Maths]{"entity":"sub"}
     - [C]{"entity":"sub"} is the subject
-    - Engineering Physics-I{"entity":"sub"}
+    - [Engineering Physics]{"entity":"sub"}
     -	[Digital Logic Design Lab]{"entity":"sub"}
     -	[Discrete Structure & Logic Lab]{"entity":"sub"}
     -	[Computer Organization Lab]{"entity":"sub"}	
-    -	[Data Structures Using C/ Java Lab]{"entity":"sub"}
-    - [Mathematics-III]{"entity":"sub"}
+    -	[Data Structures Using C Lab]{"entity":"sub"}
+    - [Mathematics]{"entity":"sub"}
     - [Environment & Ecology]{"entity":"sub"}
     - [Introduction to Microprocessor]{"entity":"sub"}
     - [Operating Systems]{"entity":"sub"}
@@ -782,15 +782,15 @@ nlu:
     - [Compiler Design Lab]{"entity":"sub"}	
     - [Computer Graphics Lab]{"entity":"sub"}	
     - [Data Warehousing & Data Mining Lab]{"entity":"sub"}	
-    - [Engineering Maths-II]{"entity":"sub"}
-    -	[Engineering Physics-II]{"entity":"sub"}
-    -	[Elements of Mechanical Engg.]{"entity":"sub"}
+    - [Engineering Maths]{"entity":"sub"}
+    -	[Engineering Physics]{"entity":"sub"}
+    -	[Elements of Mechanical Engg]{"entity":"sub"}
     -	[Computer System & Programming in C]{"entity":"sub"}
     -	[Engineering Chemistry]{"entity":"sub"}	
     -	[Engg. Chemistry Lab	Practical]{"entity":"sub"}
-    -	[Elements of Mechanical Engg. Lab]{"entity":"sub"}	
-    - [Computer Progm. Lab]{"entity":"sub"}	
-    -	[Computer Aided Engg. Graphics]{"entity":"sub"}   
+    -	[Elements of Mechanical Engg Lab]{"entity":"sub"}	
+    - [Computer Progm Lab]{"entity":"sub"}	
+    -	[Computer Aided Engg Graphics]{"entity":"sub"}   
     - [Laser System and Application]{"entity":"sub"}
     -	[Universal Human Values &  Professional Ethics]{"entity":"sub"}	
     -	[Digital Logic Design]{"entity":"sub"}	

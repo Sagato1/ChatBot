@@ -28,7 +28,6 @@ stories:
 #   - action: utter_did_that_help
 #   - intent: deny
 #   - action: utter_goodbye
-
 #out of scope
 - story: try_again
   steps:
@@ -148,7 +147,8 @@ stories:
     entities:
     - roll_number: "1706810235"
   - slot_was_set:
-      - roll_number: "1706810235"  
+      - roll_number: "1706810235"
+  - action: utter_fetching      
   - action: action_result1
 
 - story: ask_result_for_sem_withpercent #working
@@ -171,7 +171,8 @@ stories:
     - roll_number: "1706810235"
   - slot_was_set:
       - roll_number: "1706810235"  
-  - action: action_result1
+  - action: utter_fetching      
+  - action: action_result2
 
 # - story: ask_result_for_year_withmarks #working
 #   steps:
@@ -214,8 +215,9 @@ stories:
     entities:
     - roll_number: "1706810235"
   - slot_was_set:
-      - roll_number: "1706810235"    
-  - action: action_result3
+      - roll_number: "1706810235"
+  - action: utter_fetching          
+  - action: action_result4
 
 - story: askresult_for_subject_withpercent #working
   steps:
@@ -237,7 +239,8 @@ stories:
     - roll_number: "1706810235"
   - slot_was_set:
       - roll_number: "1706810235"    
-  - action: action_result3
+  - action: utter_fetching      
+  - action: action_result5
 
 - story: ask_result_for_year_withpercent #working
   steps:
@@ -258,8 +261,9 @@ stories:
     entities:
     - roll_number: "1706810235"
   - slot_was_set:
-      - roll_number: "1706810235"  
-  - action: action_result2
+      - roll_number: "1706810235"
+  - action: utter_fetching        
+  - action: action_result6
 
 
 
@@ -276,7 +280,8 @@ stories:
   - slot_was_set:
       - year: "third"
       - roll_number: "1512685467"    
-  - action: action_result2
+  - action: utter_fetching
+  - action: action_result7
 
 
 
@@ -293,7 +298,8 @@ stories:
   - slot_was_set:
       - semester: "third"
       - roll_number: "1512685467"
-  - action: action_result1    
+  - action: utter_fetching
+  - action: action_result8    
 
 
 
@@ -310,7 +316,8 @@ stories:
   - slot_was_set:
       - year: "third"
       - roll_number: "1512685467"    
-  - action: action_result2
+  - action: utter_fetching
+  - action: action_result9
 
 
 
@@ -327,7 +334,8 @@ stories:
   - slot_was_set:
       - semester: "third"
       - roll_number: "1512685467"
-  - action: action_result1
+  - action: utter_fetching
+  - action: action_result10    
 
 
 
@@ -342,7 +350,8 @@ stories:
     - roll_number: "1512685467"
   - slot_was_set:
       - roll_number: "1512685467"
-  - action: action_result4   
+  - action: utter_fetching
+  - action: action_result11   
 
 
 
@@ -357,7 +366,8 @@ stories:
     - roll_number: "1512685467"
   - slot_was_set:
       - roll_number: "1512685467"
-  - action: action_result4  
+  - action: utter_fetching
+  - action: action_result12   
 
 
 
@@ -402,7 +412,8 @@ stories:
     - year: "second"
   - slot_was_set:
       - year: "second"
-  - action: action_result2
+  - action: utter_fetching
+  - action: action_result14
 
 - story: ask_result_given_roll_withsempercent #working
   steps:
@@ -412,7 +423,7 @@ stories:
   - slot_was_set:
       - roll_number: "1706810235"  
   - action: utter_ok
-  - action: utter_semformatoption
+  - action: utter_yearformatoption
   - intent: percent
   - action: utter_option
   - intent: semester
@@ -422,7 +433,8 @@ stories:
     - semester: "seventh"
   - slot_was_set:
       - semester: "seventh"
-  - action: action_result1
+  - action: utter_fetching
+  - action: action_result15
 
 - story: ask_result_given_roll_withsemmarks #working
   steps:
@@ -432,7 +444,7 @@ stories:
   - slot_was_set:
       - roll_number: "1706810235"  
   - action: utter_ok
-  - action: utter_semformatoption
+  - action: utter_yearformatoption
   - intent: marks
   - action: utter_option
   - intent: semester
@@ -442,7 +454,8 @@ stories:
     - semester: "six"
   - slot_was_set:
       - semester: "six"
-  - action: action_result1
+  - action: utter_fetching
+  - action: action_result16
 
 # - story: ask_result_given_roll_withsubmarks #not working
 #   steps:
@@ -482,7 +495,8 @@ stories:
       - roll_number: "1512685467"
   - action: utter_semformatoption      
   - intent: marks      
-  - action: action_result1
+  - action: utter_fetching
+  - action: action_result18
 
 - story: num_sem_provided_tell_result_inpercent #working
   steps:
@@ -495,7 +509,8 @@ stories:
       - roll_number: "1512685467"
   - action: utter_semformatoption      
   - intent: percent
-  - action: action_result1 
+  - action: utter_fetching
+  - action: action_result19 
 
 
 
@@ -513,7 +528,8 @@ stories:
       - roll_number: "1512685467"
   - action: utter_yearformatoption      
   - intent: marks      
-  - action: action_result2 
+  - action: utter_fetching
+  - action: action_result20 
 
 - story: num_yr_provided_tell_result_inmarks #working
   steps:
@@ -526,4 +542,30 @@ stories:
       - roll_number: "1512685467"
   - action: utter_yearformatoption      
   - intent: percent      
-  - action: action_result2   
+  - action: utter_fetching
+  - action: action_result21   
+
+
+- story: tell_overallpercentage
+  steps:
+  - intent: overall_percentage
+  - action: utter_roll
+  - intent: tellroll_no
+    entities:
+    - roll_number: "1512685467"
+  - slot_was_set:
+      - roll_number: "1512685467"
+  - action: utter_fetching
+  - action: action_overall1
+
+- story: tell_overallmarks
+  steps:
+  - intent: overall_marks
+  - action: utter_roll
+  - intent: tellroll_no
+    entities:
+    - roll_number: "1512685467"
+  - slot_was_set:
+      - roll_number: "1512685467"
+  - action: utter_fetching
+  - action: action_overall2

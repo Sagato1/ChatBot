@@ -238,7 +238,9 @@ responses:
   utter_show_map:
     - text: Here is the map 
   utter_yes:
-    - text: Yeah Definately!!  
+    - text: Yeah Definately!!
+  utter_fetching:
+    - text: Please wait while I fetch your results.......    
   utter_come_again:
   - text: Sorry, I didn't get what you said. Please rephrase what you said.
 actions:
@@ -252,4 +254,6 @@ actions:
 - action_tell_fee
 - action_canteen_menu
 - action_show_map
+- action_overall1
+- action_overall2
 e2e_actions: []
